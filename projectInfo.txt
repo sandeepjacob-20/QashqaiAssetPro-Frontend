@@ -1,0 +1,39 @@
+Modules required
+-----------------
+1. Shared module -  models, not-found and services
+
+    -model : 
+        1. Asset (asset definition table)
+        2. Vendor
+        3. Purchase ( orders table)
+        4. AssetMaster
+    note : classes for additional tables can be created as and when required
+
+    -services : 
+        1. asset services
+        2. vendor services
+        3. purchase services
+        4. asset master services
+    note : additional services can be added as and when required
+
+2. Asset module - for operations on asset definition table
+3. Vendor module - for operations on vendor table
+4. Purchase module - for operations on purchase order table
+5. AssetMaster mpdule - for operations on asset master table
+6. Auth module - for login and authentication
+7. Home Module -  to handle home page for user and admin
+
+
+Work Done
+----------
+1.created basic modules, components, classes and services
+2.Added API link in environments.ts ('apiURL: "http://localhost:9091')
+3.Added routing /**(random) -> not-found.html
+4.Added Bootstrap using link in index.html
+5.Added home module which redirects to user (home/user) or admin (home/admin) 
+
+
+Work to be done
+----------------
+1. Need to create components to perform add, list, delete etc .. for each module (ng g c asset/asset-list) 
+2. Need to create routing for each module
