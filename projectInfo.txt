@@ -7,6 +7,7 @@ Modules required
         2. Vendor
         3. Purchase ( orders table)
         4. AssetMaster
+        5. User (for authentication)
     note : classes for additional tables can be created as and when required
 
     -services : 
@@ -14,6 +15,7 @@ Modules required
         2. vendor services
         3. purchase services
         4. asset master services
+        5. authentication services
     note : additional services can be added as and when required
 
 2. Asset module - for operations on asset definition table
@@ -31,6 +33,7 @@ Work Done
 3.Added routing /**(random) -> not-found.html
 4.Added Bootstrap using link in index.html
 5.Added home module which redirects to user (home/user) or admin (home/admin) 
+6.Added auth component and login component in auth module 
 
 
 Work to be done
