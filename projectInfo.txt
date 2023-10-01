@@ -34,6 +34,6 @@ Work Done
 
 
 Work to be done
-----------------
+---------------
 1. Need to create components to perform add, list, delete etc .. for each module (ng g c asset/asset-list) 
 2. Need to create routing for each module
