@@ -34,6 +34,7 @@ Work Done
 4.Added Bootstrap using link in index.html
 5.Added home module which redirects to user (home/user) or admin (home/admin) 
 6.Added auth component and login component in auth module 
+7.Added routing to login page (auth/login)
 
 
 Work to be done
