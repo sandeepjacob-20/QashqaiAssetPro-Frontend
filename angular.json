@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "QashqaiAssetPro"
+    }
+  },
+  "defaultProject": "QashqaiAssetPro",
+  "cli": {
+    "analytics": false
+  }
 }
