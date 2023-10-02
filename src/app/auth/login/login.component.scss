@@ -1,0 +1,16 @@
+.container{
+    text-align: center;
+    margin-top: 1%;
+}
+
+//to diplay missing field errors in red
+.errors{
+    color: red;
+    text-align: left;
+}
+
+//to display validation errors in red
+.validation-error{
+    color: red;
+    text-align: left;
+}
