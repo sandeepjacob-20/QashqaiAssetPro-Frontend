@@ -9,7 +9,7 @@ import { SharedComponent } from './shared/shared.component';
 
 const routes: Routes = [
   //default route
-  { path: '', redirectTo: 'purchase/add', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 
   //lazy loading
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
