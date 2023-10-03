@@ -5,11 +5,15 @@ import{environment} from 'src/environments/environment';
 import { Vendor } from '../model/vendor';
 import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PurchaseService {
+  updateOrder(value: any) {
+    throw new Error('Method not implemented.');
+  }
   //declare variables-------global variables
   formOrderData: Purchase = new Purchase();
   purchase: Purchase[];
@@ -67,5 +71,9 @@ export class PurchaseService {
       console.log(error)
     });
     
+  }
+  //update
+  updateOrders(purchase:Purchase):Observable<any>{
+    return this.httpClient.put(environment.apiURL+'/api/orders/edit',purchase)
   }
 }

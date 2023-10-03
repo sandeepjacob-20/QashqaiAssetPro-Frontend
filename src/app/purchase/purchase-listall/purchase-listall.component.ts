@@ -13,6 +13,7 @@ export class PurchaseListallComponent implements OnInit {
 
   ngOnInit(): void {
     this.purchaseService.getAllOrders();
+    
   }
    //getting order data
    populateOrderData(purchase:Purchase){
@@ -21,7 +22,7 @@ export class PurchaseListallComponent implements OnInit {
   
   
   //update
-  updateOrder(purchase:Purchase){
+  updateOrders(purchase:Purchase){
     console.log(purchase);
     this.populateOrderData(purchase);
     this.router.navigate(['/purchase/edit',purchase.pdId])
