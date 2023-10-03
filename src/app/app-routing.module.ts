@@ -12,18 +12,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'purchase/add', pathMatch: 'full' },
 
   //lazy loading
-  {
-    path: 'purchase',
-    component: PurchaseComponent,
-    loadChildren: () => import('./purchase/purchase.module').then(x =>x.PurchaseModule)
-  },
-  {
-    path: 'shared',
-    component: SharedComponent,
-    loadChildren: () => import('./shared/shared.module').then(x => x.SharedModule)
-  },
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: HomeComponent, loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'purchase', component: PurchaseComponent, loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
 
    //wildcard route for page not found - should be last route
   { path: '**', component: NotFoundComponent }

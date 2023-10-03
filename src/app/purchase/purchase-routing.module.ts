@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AddComponent } from './purchase-add/add.component';
 import { ListComponent } from './purchase-list/list.component';
 import { EditComponent } from './purchase-edit/edit.component';
