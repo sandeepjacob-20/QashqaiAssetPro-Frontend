@@ -17,6 +17,7 @@ export class EditComponent implements OnInit {
     this.purchaseService.getAllAssetsTypes();
     this.purchaseService.getAllAssets();
     this.purchaseService.getAllVendors();
+    this.purchaseService.getAllStatus();
   }
      
   //update
