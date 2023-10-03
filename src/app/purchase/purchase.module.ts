@@ -7,10 +7,11 @@ import { ListComponent } from './purchase-list/list.component';
 import { AddComponent } from './purchase-add/add.component';
 import { EditComponent } from './purchase-edit/edit.component';
 import { FormsModule } from '@angular/forms';
+import { PurchaseListallComponent } from './purchase-listall/purchase-listall.component';
 
 
 @NgModule({
-  declarations: [PurchaseComponent, ListComponent, AddComponent, EditComponent],
+  declarations: [PurchaseComponent, ListComponent, AddComponent, EditComponent, PurchaseListallComponent],
   imports: [
     CommonModule,
     PurchaseRoutingModule,
