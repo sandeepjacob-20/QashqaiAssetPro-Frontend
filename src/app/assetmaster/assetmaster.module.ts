@@ -7,13 +7,16 @@ import { AssetmasterAddComponent } from './assetmaster-add/assetmaster-add.compo
 import { AssetmasterListComponent } from './assetmaster-list/assetmaster-list.component';
 import { PendingListComponent } from './pending-list/pending-list.component';
 import { NewordersComponent } from './neworders/neworders.component';
+import { EditordersComponent } from './editorders/editorders.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent],
+  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent, EditordersComponent],
   imports: [
     CommonModule,
-    AssetmasterRoutingModule
+    AssetmasterRoutingModule,
+    FormsModule
   ]
 })
 export class AssetmasterModule { }

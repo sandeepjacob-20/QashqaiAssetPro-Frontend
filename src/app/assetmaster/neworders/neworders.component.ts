@@ -26,7 +26,7 @@ export class NewordersComponent implements OnInit {
   updateOrders(purchase: Purchase) {
     console.log(purchase);
     this.populateOrderData(purchase);
-    this.router.navigate(['/purchase/edit', purchase.pdId])
+    this.router.navigate(['/assetmaster/editorder', purchase.pdId])
   }
 
 }

@@ -5,12 +5,14 @@ import { AssetmasterAddComponent } from './assetmaster-add/assetmaster-add.compo
 import { AuthGuard } from '../auth/auth.guard';
 import { PendingListComponent } from './pending-list/pending-list.component';
 import { NewordersComponent } from './neworders/neworders.component';
+import { EditordersComponent } from './editorders/editorders.component';
 
 const routes: Routes = [
   { path:'add', component: AssetmasterAddComponent, canActivate: [AuthGuard], data: { role: '1' } },
   { path:'list', component: AssetmasterListComponent, canActivate: [AuthGuard], data: { role: '1' } },
   { path: 'pending', component: PendingListComponent, canActivate: [AuthGuard], data: { role: '1' } },
-  { path: 'neworders', component: NewordersComponent, canActivate: [AuthGuard], data: { role: '1' } }
+  { path: 'neworders', component: NewordersComponent, canActivate: [AuthGuard], data: { role: '1' } },
+  { path: 'editorder/:id', component: EditordersComponent, canActivate: [AuthGuard], data: { role: '1' } },
 ];
 
 @NgModule({
