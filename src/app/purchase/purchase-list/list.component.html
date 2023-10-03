@@ -1,0 +1,41 @@
+<!-- List of orders -->
+<div class="container">
+    <!-- Add Employee -->
+    <!-- <div class="header">
+        <a [routerLink]="['/employees/add']" role="button" class="btn btn-outline-primary custom-margin">
+            <span><i class="fa fa-user-plus fa-lg"></i></span>
+            <br>Add Employee</a>&nbsp;
+    </div> -->
+    <table class="table table-striped table=bordered">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Order No.</th>
+                <th>Quantity</th>
+                <th>Order Date</th>
+                <th>Delivery Date</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let purchase of purchaseService.purchase">
+                <td>{{purchase.pdId}}</td>
+                <td>{{purchase.pdOrder}}</td>
+                <td>{{purchase.pdQty}}</td>
+                <td>{{purchase.pdDate}}</td>
+                <td>{{purchase.pdDDate}}</td>
+                <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateEmployee(employee)"><i
+                            class="fa fa-edit"></i></button>
+                    &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td>
+                <!-- <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateEmployee(employee)"><i
+                            class="fa fa-edit"></i></button>
+                    &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td> -->
+
+            </tr>
+
+        </tbody>
+
+    </table>
+</div>
