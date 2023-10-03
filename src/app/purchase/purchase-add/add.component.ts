@@ -14,6 +14,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.purchaseService.getAllVendors();
+    
   }
   addOrder (form?: NgForm){
   console.log("Inserting............");
