@@ -41,11 +41,11 @@
         </div>
         <!-- Asset Name -->
         <div class="form-group">
-            <label>Vendor Name</label>
-            <select name="vendorId" id="vendorId" #vendorId="ngModel"
-                [(ngModel)]="purchaseService.formOrderData.vendorId" class="form-control">
+            <label>Asset Brand Name</label>
+            <select name="adId" id="adId" #adId="ngModel"
+                [(ngModel)]="purchaseService.formOrderData.adId" class="form-control">
                 <option value=0 selected disabled>---Select Vendor-----------</option>
-                <option *ngFor="let ven of purchaseService.vendor" value="{{ven.vendorId}}">
+                <option *ngFor="let ven of purchaseService." value="{{ven.vendorId}}">
                     {{ven.vendorName}}
                 </option>
             </select>
