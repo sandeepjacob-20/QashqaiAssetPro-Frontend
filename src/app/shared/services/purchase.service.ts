@@ -6,6 +6,7 @@ import { Vendor } from '../model/vendor';
 import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
 import { Observable } from 'rxjs';
+import { Status } from '../model/status';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class PurchaseService {
   purchase: Purchase[];
   vendor: Vendor[];
   asset: Asset[];
+  status:Status[];
   assetDefinition: AssetDefinition[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
@@ -75,5 +77,18 @@ export class PurchaseService {
   //update
   updateOrders(purchase:Purchase):Observable<any>{
     return this.httpClient.put(environment.apiURL+'/api/orders/edit',purchase)
+  }
+
+  //getallStatus
+  getAllStatus():void{
+    this.httpClient.get(environment.apiURL+'/api/status/get')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.status = response as Status[]
+    },
+    error=>{
+      console.log(error)
+    });
   }
 }
