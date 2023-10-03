@@ -38,15 +38,26 @@
                 <div *ngIf="pdDDate.errors.required">
                     Delivery Date is invalid or required!</div>
             </div>
-        </div> -->
-        <!-- Asset Name -->
-        <!-- <div class="form-group">
-            <label>Asset Brand Name</label>
+        </div>
+        <!-- AssetType Name -->
+        <div class="form-group">
+            <label>AssetType Name</label>
+            <select name="assetId" id="assetId" #assetId="ngModel"
+                [(ngModel)]="purchaseService.formOrderData.assetId" class="form-control">
+                <option value=0 selected disabled>---Select Asset Type-----------</option>
+                <option *ngFor="let ast of purchaseService.asset" value="{{ast.assetId}}">
+                    {{ast.assetType}}
+                </option>
+            </select>
+        </div>
+        <!-- AssetDefinition Name -->
+        <div class="form-group">
+            <label>Asset Definition Name</label>
             <select name="adId" id="adId" #adId="ngModel"
                 [(ngModel)]="purchaseService.formOrderData.adId" class="form-control">
-                <option value=0 selected disabled>---Select Vendor-----------</option>
-                <option *ngFor="let ven of purchaseService." value="{{ven.vendorId}}">
-                    {{ven.vendorName}}
+                <option value=0 selected disabled>---Select Asset Definition -----------</option>
+                <option *ngFor="let ass of purchaseService.assetDefinition" value="{{ass.adId}}">
+                    {{ass.adName}}
                 </option>
             </select>
         </div> -->
@@ -70,18 +81,13 @@
                 <label class="form-check-label">Is in service</label>
             </div>
         </div>
-        <br> -->
-        <!-- Is Taken -->
-        <!-- <div class="form-group">
-
-            <div class="form-check">
-                <input type="checkbox" name="active" #active="ngModel"
-                    [(ngModel)]="purchaseService.formOrderData.taken" class="form-check-input custom-checkbox" />
-                <label class="form-check-label">Is Completed</label>
-            </div>
-        </div>
         <br>
         <div class="'form-group">
+
+        </div>
+        <div class="'form-group">
+            <label for="Status">Status</label>
+            <input type="text" readonly name="statusId" [(ngModel)]="purchaseService.formOrderData.statusId" value="1" />
             <button type="submit" class="btn btn-lg btn-primary form-control"
                 [disabled]="!(form.valid && form.dirty)">INSERT</button>
         </div>

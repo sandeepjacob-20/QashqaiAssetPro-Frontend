@@ -3,6 +3,7 @@ import { Purchase } from '../model/purchase';
 import{HttpClient} from'@angular/common/http';
 import{environment} from 'src/environments/environment';
 import { Vendor } from '../model/vendor';
+import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
 
 @Injectable({
@@ -13,6 +14,8 @@ export class PurchaseService {
   formOrderData: Purchase = new Purchase();
   purchase: Purchase[];
   vendor: Vendor[];
+  asset: Asset[];
+  assetDefinition: AssetDefinition[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
   //1 get all orders - promise
@@ -41,16 +44,28 @@ export class PurchaseService {
     });
     
   }
-  // getAllAssets(): void{
-  //   this.httpClient.get(environment.apiURL+'/api/assetdefinition')
-  //   .toPromise()
-  //   .then(response => {
-  //     console.log(response)
-  //     this.assetdefinition = response as AssetDefinition[]
-  //   },
-  //   error=>{
-  //     console.log(error)
-  //   });
+  getAllAssetsTypes(): void{
+    this.httpClient.get(environment.apiURL+'/api/asset')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.asset = response as Asset[]
+    },
+    error=>{
+      console.log(error)
+    });
     
-  // }
+  }
+  getAllAssets(): void{
+    this.httpClient.get(environment.apiURL+'/api/assetdefinition')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.assetDefinition = response as AssetDefinition[]
+    },
+    error=>{
+      console.log(error)
+    });
+    
+  }
 }

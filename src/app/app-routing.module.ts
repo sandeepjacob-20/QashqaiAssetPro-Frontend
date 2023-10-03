@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
 import { VendorComponent} from './vendor/vendor.component'
 import { PurchaseComponent } from './purchase/purchase.component';
+import { AssetComponent } from './asset/asset.component';
 
 const routes: Routes = [
   //default route
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: HomeComponent, loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'purchase', component: PurchaseComponent, loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
-  {path:'vendors',component: VendorComponent,loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule)},
+  { path:'vendors', component: VendorComponent, loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule) },
+  { path:'asset', component: AssetComponent, loadChildren: () => import('./asset/asset.module').then(x => x.AssetModule) },
+
    //wildcard route for page not found - should be last route
   { path: '**', component: NotFoundComponent }
 ];

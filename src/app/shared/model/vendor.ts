@@ -1,5 +1,7 @@
+
 import { Asset } from "./asset";
-import { Assettype } from "./assettype";
+import { AssetDefinition } from "./assetdefinition";
+
 
 export class Vendor {
 
@@ -22,6 +24,10 @@ export class Vendor {
     address:string='';
     active: boolean=false;
     //object oriented model
-    assettype:Assettype=new Assettype() 
+
+    assettype:Asset=new Asset() 
+
+   // asset:AssetDefinition=new AssetDefinition() 
+
     
 }
