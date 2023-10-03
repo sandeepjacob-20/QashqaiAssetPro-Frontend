@@ -10,6 +10,7 @@ export class AssetAddComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

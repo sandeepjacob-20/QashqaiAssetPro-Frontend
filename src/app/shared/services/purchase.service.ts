@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { Purchase } from '../model/purchase';
 import{HttpClient} from'@angular/common/http';
 import{environment} from 'src/environments/environment';
@@ -53,4 +53,4 @@ export class PurchaseService {
   //   });
     
   // }
-}
+}*/
