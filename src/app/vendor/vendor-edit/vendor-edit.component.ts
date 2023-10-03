@@ -13,6 +13,7 @@ export class VendorEditComponent implements OnInit {
   constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
+    this.vendorService.getAllAssets();
   }
   updateVendor(form?:NgForm){
     console.log("Editing...");

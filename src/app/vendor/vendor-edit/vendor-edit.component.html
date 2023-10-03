@@ -104,18 +104,18 @@
         </div>
         </div> -->
 <!-- dropdown list for department -->
-<!-- <div class="form-group">
-    <label>Department </label>
-    <select name="departmentid" id="departmentid" #departmentid="ngModel" [(ngModel)]="employeeService.formEmployeeData.departmentid"  class="form-control" required>
-        <option value="0" selected disabled>---Select Department</option>
-        <option *ngFor="let dept of employeeService.departments" value="{{dept.departmentId}}">{{dept.departmentName}}</option>
+<div class="form-group">
+    <label>Asset Type </label>
+    <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="vendorService.formVendorData.assetId"  class="form-control" required>
+        <option value="0" selected disabled>---Select Asset Type</option>
+        <option *ngFor="let assettype of vendorService.assettypes" value="{{assettype.assetId}}">{{assettype.assetType}}</option>
     </select>
-    <div class="validation-error" *ngIf="departmentid.touched&&departmentid.invalid">
-        <div *ngIf="departmentid.errors.required">
+    <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
+        <div *ngIf="assetId.errors.required">
             Department is invalid or required!
         </div>
     </div>
-    </div> -->
+    </div>
     <!-- isActive -->
     <div class="form-group">
         <div class="form-check">
@@ -129,10 +129,10 @@
         </div>
         <br>
     <!-- Submit -->
-    <!-- <div class="form-group">
+    <div class="form-group">
         <button type="submit" class="btn btn-lg btn-primary form-control"
         [disabled]="!(form.valid &&form.dirty)">INSERT</button>
-    </div> -->
+    </div>
     </form>
 
 </div>

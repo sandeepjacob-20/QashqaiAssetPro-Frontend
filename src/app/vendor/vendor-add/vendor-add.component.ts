@@ -13,6 +13,8 @@ export class VendorAddComponent implements OnInit {
   constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
+    //get all assets
+    this.vendorService.getAllAssets();
   }
   //Insert
   insertVendor(form?:NgForm){
