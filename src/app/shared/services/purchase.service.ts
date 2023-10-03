@@ -4,6 +4,7 @@ import{HttpClient} from'@angular/common/http';
 import{environment} from 'src/environments/environment';
 import { Vendor } from '../model/vendor';
 import { Asset } from '../model/asset';
+import { Assettype } from '../model/assettype';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class PurchaseService {
   formOrderData: Purchase = new Purchase();
   purchase: Purchase[];
   vendor: Vendor[];
+  assettype: Assettype[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
   //1 get all orders - promise
@@ -41,16 +43,16 @@ export class PurchaseService {
     });
     
   }
-  // getAllAssets(): void{
-  //   this.httpClient.get(environment.apiURL+'/api/assetdefinition')
-  //   .toPromise()
-  //   .then(response => {
-  //     console.log(response)
-  //     this.assetdefinition = response as AssetDefinition[]
-  //   },
-  //   error=>{
-  //     console.log(error)
-  //   });
+  getAllAssetsTypes(): void{
+    this.httpClient.get(environment.apiURL+'/api/asset')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.assettype = response as Assettype[]
+    },
+    error=>{
+      console.log(error)
+    });
     
-  // }
+  }
 }
