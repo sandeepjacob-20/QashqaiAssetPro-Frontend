@@ -20,7 +20,7 @@
             <select name="assetId" id="assetId" #assetId="ngModel"
                 [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
                 <option value=0 selected disabled>---Select Asset Type-----------</option>
-                <option *ngFor="let ast of assetService.assettype" value="{{ast.assetId}}">
+                <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
                     {{ast.assettype}}
                 </option>
             </select>

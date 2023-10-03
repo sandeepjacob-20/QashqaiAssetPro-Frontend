@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AssetService {
+  formAssetData:AssetDefinition=new AssetDefinition();
   assetdefinition:AssetDefinition[];
   asset:Asset[];
   assetclass:Assetclass[];
