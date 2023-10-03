@@ -1,40 +1,43 @@
-<div class="'container">
+  <div class="'container">
     <h3>New Asset Info</h3>
     <hr>
     <!-- Template Driven Form -->
-    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) ">
+    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) "> 
         <!-- Asset Defintion Id -->
         <div class="form-group">
-            <input type="hidden" readonly name="adId" [(ngModel)]="assetService.formOrderData.adId" />
+            <input type="hidden" readonly name="adId" value="adId" [(ngModel)]="assetService.formAssetData.adId" />
         </div>
-        <div class="form-group">
+
+        <div class="form-group form-control">
             <label for="assetName "></label>
-            <input type="text" name="adName" [(ngModel)]="assetService.formOrderData.adName" />
+            <input type="text" name="adName" placeholder="asset Name" [(ngModel)]="assetService.formAssetData.adName" />
         </div>
-        
-        <!-- Asset Name -->
-        <div class="form-group">
-            <label>Asset Type Name</label>
+         
+       
+        <!-- AssetType Name -->
+         <div class="form-group">
+            <label>AssetType Name</label>
             <select name="assetId" id="assetId" #assetId="ngModel"
-                [(ngModel)]="assetService.formOrderData.assetId" class="form-control">
-                <option value=0 selected disabled>---Select Asset-----------</option>
-                <option *ngFor="let assetItem of assetService.assettype" value="{{assetItem.assetId}}">
-                    {{assetItem.assetType}}
+                [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
+                <option value=0 selected disabled>---Select Asset Type-----------</option>
+                <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
+                    {{ast.assettype}}
                 </option>
-                
             </select>
         </div>
 
+        <!-- AssetType Name -->
         <div class="form-group">
-            <label>Asset Class Name</label>
-            <select name="adId" id="adId" #adId="ngModel"
-                [(ngModel)]="assetService.formOrderData.adId" class="form-control">
-                <option value=0 selected disabled>---Select Asset-----------</option>
-                <option *ngFor="let assetItem of assetService.assetclass" value="{{assetItem.adId}}">
-                    {{assetItem.assetClass}}
+            <label>AssetClass Name</label>
+            <select name="assetClassId" id="assetClassId" #assetClassId="ngModel"
+                [(ngModel)]="assetService.formAssetData.assetClassId" class="form-control">
+                <option value=0 selected disabled>---Select Asset Type-----------</option>
+                <option *ngFor="let ast of assetService.assetclass" value="{{ast.assetClassId}}">
+                    {{ast.assetclass}}
                 </option>
             </select>
         </div>
+
         
         <div class="'form-group">
             <button type="submit" class="btn btn-lg btn-primary form-control"
@@ -44,4 +47,4 @@
 
 
 </form>
-</div>
+</div> 

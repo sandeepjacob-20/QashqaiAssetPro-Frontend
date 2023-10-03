@@ -20,12 +20,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let assetitem of assetService.assetdefinition">
-                <td>{{assetitem.assetId}}</td>
-                <td>{{assetitem.adName}}</td>
-               <td>{{assetitem.assetId}}</td>
-                <!-- <td>{{assetitem.assettype.assetType}}</td>
-                <td>{{assetitem.assetclass.assetClass}}</td> -->
+            <tr *ngFor="let asset of assetService.assetdefinition">
+                <td>{{asset.adId}}</td>
+                <td>{{asset.adName}}</td>
+               <td>{{asset.assetId}}</td>
+                 <td>{{asset.asset.assetType}}</td>
+                <td>{{asset.assetclass.assetClass}}</td> 
                 <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateEmployee(employee)"><i
                             class="fa fa-edit"></i></button>
                     &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td>
