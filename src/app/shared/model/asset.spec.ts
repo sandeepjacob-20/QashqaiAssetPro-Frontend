@@ -1,4 +1,5 @@
-import { Asset } from './assetdefinition';
+import { Asset } from "./asset";
+
 
 describe('Asset', () => {
   it('should create an instance', () => {
