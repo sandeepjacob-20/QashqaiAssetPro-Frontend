@@ -57,9 +57,15 @@ export class LoginComponent implements OnInit {
             this.error = "Invalid username or password";
           }
           else if (response.data.role == 1) {
+            localStorage.setItem('USER_NAME', response.data.UserName);
+            localStorage.setItem('ACCESS_ROLE', response.data.role);
+            localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
             this.router.navigate(['/home/admin']);
           }
           else if (response.data.role == 2) {
+            localStorage.setItem('USER_NAME', response.data.UserName);
+            localStorage.setItem('ACCESS_ROLE', response.data.role);
+            localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
             this.router.navigate(['/home/user']);
           }
         });

@@ -1,6 +1,8 @@
 import { Asset } from "./asset";
 import { Status } from "./status";
 import { Vendor } from "./vendor";
+import {Assettype} from "./assettype"
+
 
 export class Purchase {
     pdId: number=0;
@@ -9,20 +11,11 @@ export class Purchase {
     pdDate: Date=new Date;
     pdDDate: Date=new Date;
     adId: number=0;
-     
-    // "assetDefinition": {
-    //     "adId": 2,
-    //     "adName": "lenovo",
-    //     "assetId": 1,
-    //     "assetTypes": {
-    //         "assetId": 1,
-    //         "assetType": "laptop",
-    //         "active": true
-    //     },
-    //     "active": false
-    // },
-    assetId: number=0;
     asset: Asset= new Asset();
+  
+    
+    assetId: number=0;
+    assettype: Assettype= new Assettype();
     
     vendorId: number=0;
     vendor: Vendor= new Vendor();
