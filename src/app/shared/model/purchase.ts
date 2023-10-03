@@ -1,7 +1,8 @@
 import { Asset } from "./asset";
+import { AssetDefinition } from "./assetdefinition";
 import { Status } from "./status";
 import { Vendor } from "./vendor";
-import {Assettype} from "./assettype"
+
 
 
 export class Purchase {
@@ -11,11 +12,11 @@ export class Purchase {
     pdDate: Date=new Date;
     pdDDate: Date=new Date;
     adId: number=0;
-    asset: Asset= new Asset();
+    assetdfinition: AssetDefinition= new AssetDefinition();
   
     
     assetId: number=0;
-    assettype: Assettype= new Assettype();
+    assettype: Asset = new Asset();
     
     vendorId: number=0;
     vendor: Vendor= new Vendor();

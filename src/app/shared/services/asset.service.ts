@@ -1,19 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
-import { Observable } from 'rxjs';
-import { Assettype } from '../model/assettype';
 import { Assetclass } from '../model/assetclass';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AssetService {
-  formAssetData:Asset=new Asset();
-  assets:Asset[];
-  assettype: Assettype[];
-  assetclass: Assetclass[];
+  assetdefinition:AssetDefinition[];
+  asset:Asset[];
+  assetclass:Assetclass[];
   constructor(private httpClient:HttpClient) { }
   getAllAsset():void{
     //getting the data
@@ -21,7 +20,7 @@ export class AssetService {
     .toPromise()
     .then(response =>{
       console.log(response);
-      this.assets=response as Asset[];
+      this.assetdefinition=response as AssetDefinition[];
     },
     error=>{
       console.log('Error')
@@ -29,11 +28,11 @@ export class AssetService {
   }
 
   getAllAssetType(): void{
-    this.httpClient.get(environment.apiURL+'/api/assetO')
+    this.httpClient.get(environment.apiURL+'/api/asset')
     .toPromise()
     .then(response => {
       console.log(response)
-      this.assettype = response as Assettype[]
+      this.asset = response as Asset[]
     },
     error=>{
       console.log(error)

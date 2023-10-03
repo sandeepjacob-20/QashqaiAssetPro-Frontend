@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Asset } from 'src/app/shared/model/asset';
 import { AssetService } from 'src/app/shared/services/asset.service';
 
 @Component({
