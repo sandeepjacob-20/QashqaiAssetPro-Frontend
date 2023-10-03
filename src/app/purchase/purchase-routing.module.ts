@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'list', component: ListComponent, canActivate: [AuthGuard], data: { role: '2' } },
 
 //go to employee - edit
-  { path: 'edit', component: EditComponent, canActivate: [AuthGuard], data: { role: '1' } },
+  { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard], data: { role: '1' } },
 
   //go to employee - listall
   { path: 'listall', component: PurchaseListallComponent, canActivate: [AuthGuard], data: { role: '1' } }
