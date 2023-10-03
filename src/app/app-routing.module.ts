@@ -10,7 +10,6 @@ import { AssetComponent } from './asset/asset.component';
 const routes: Routes = [
   //default route
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
-  
   //lazy loading
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: HomeComponent, loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },

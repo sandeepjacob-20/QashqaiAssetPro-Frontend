@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { VendorService } from 'src/app/shared/services/vendor.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-vendor-add',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  //Insert
+  insertVendor(form?:NgForm){
+    console.log("Inserting...");
+    this.vendorService.insertVendor(form.value).subscribe(
+      (response)=>{console.log(response);},
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
+//Submit form
+onSubmit(form:NgForm){
+  console.log(form.value)
+  //insert
+  this.insertVendor(form);
+  form.resetForm();
+  this.router.navigateByUrl("/vendors/list")
+  //this.rouer.navigate([url])
+  
+}
 }

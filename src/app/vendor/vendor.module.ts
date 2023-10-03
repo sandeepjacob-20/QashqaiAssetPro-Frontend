@@ -6,10 +6,11 @@ import { VendorAddComponent } from './vendor-add/vendor-add.component';
 import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { VendorComponent } from './vendor.component';
 import { FormsModule } from '@angular/forms';
+import { VendorEditComponent } from './vendor-edit/vendor-edit.component';
 
 
 @NgModule({
-  declarations: [VendorAddComponent, VendorListComponent, VendorComponent],
+  declarations: [VendorAddComponent, VendorListComponent, VendorComponent, VendorEditComponent],
   imports: [
     CommonModule,
     VendorRoutingModule,
