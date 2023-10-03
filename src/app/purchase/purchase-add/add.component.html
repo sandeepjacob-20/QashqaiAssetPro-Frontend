@@ -50,6 +50,17 @@
                 </option>
             </select>
         </div>
+        <!-- AssetDefinition Name -->
+        <!-- <div class="form-group">
+            <label>Asset Definition Name</label>
+            <select name="adId" id="adId" #adId="ngModel"
+                [(ngModel)]="purchaseService.formOrderData.adId" class="form-control">
+                <option value=0 selected disabled>---Select Asset Definition -----------</option>
+                <option *ngFor="let as of purchaseService.asset" value="{{as.adId}}">
+                    {{as.adName}}
+                </option>
+            </select>
+        </div> -->
         <!-- Vendor Name -->
         <div class="form-group">
             <label>Vendor Name</label>

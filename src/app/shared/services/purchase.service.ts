@@ -15,6 +15,7 @@ export class PurchaseService {
   purchase: Purchase[];
   vendor: Vendor[];
   assettype: Assettype[];
+  asset: Asset[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
   //1 get all orders - promise
@@ -49,6 +50,18 @@ export class PurchaseService {
     .then(response => {
       console.log(response)
       this.assettype = response as Assettype[]
+    },
+    error=>{
+      console.log(error)
+    });
+    
+  }
+  getAllAssets(): void{
+    this.httpClient.get(environment.apiURL+'/api/assetdefinition')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.asset = response as Asset[]
     },
     error=>{
       console.log(error)
