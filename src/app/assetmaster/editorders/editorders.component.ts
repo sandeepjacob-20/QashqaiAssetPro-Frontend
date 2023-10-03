@@ -36,6 +36,6 @@ export class EditordersComponent implements OnInit {
     //insert
     this.updateOrders(form);
     form.resetForm();
-    this.router.navigateByUrl("/purchase/list")
+    this.router.navigateByUrl("/assetmaster/pending")
   }
 }

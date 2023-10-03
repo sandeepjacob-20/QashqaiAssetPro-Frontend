@@ -13,7 +13,6 @@ export class ListComponent implements OnInit {
   constructor(public purchaseService:PurchaseService, private router:Router) { }
 
   ngOnInit(): void {
-    console.log("hi i am employeeListComponentlo")
     this.purchaseService.getAllOrders();
     }
 

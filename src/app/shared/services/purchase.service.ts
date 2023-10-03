@@ -37,6 +37,19 @@ export class PurchaseService {
     });
  
 }
+//get some orders whose status is 4
+  getSomeOrders(): void {
+    this.httpClient.get(environment.apiURL + '/api/orders/listbystatus')
+      .toPromise()
+      .then(response => {
+        console.log(response)
+        this.purchase = response as Purchase[]
+      },
+        error => {
+          console.log(error)
+        });
+
+  }
 //get all vendors
   getAllVendors(): void{
     this.httpClient.get(environment.apiURL+'/api/vendors')
@@ -74,6 +87,7 @@ export class PurchaseService {
     });
     
   }
+  
   //update
   updateOrders(purchase:Purchase):Observable<any>{
     return this.httpClient.put(environment.apiURL+'/api/orders/edit',purchase)
