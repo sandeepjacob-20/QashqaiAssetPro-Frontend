@@ -96,5 +96,11 @@
                 </option>
             </select>
         </div>
+        <!-- Submit button -->
+        <div class="form-group">
+            
+            <button type="submit" class="btn btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">INSERT</button>
+        </div>
     </form>
 </div>
