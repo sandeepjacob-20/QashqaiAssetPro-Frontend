@@ -1,6 +1,6 @@
 import { Asset } from "./asset";
 import { AssetDefinition } from "./assetdefinition";
-import { Status } from "./status";
+import { PurchaseStatus } from "./purchaseStatus";
 import { Vendor } from "./vendor";
 
 
@@ -22,7 +22,7 @@ export class Purchase {
     vendor: Vendor= new Vendor();
     
     statusId: number=0;
-    status: Status = new Status();
+    purchaseStatus: PurchaseStatus = new PurchaseStatus();
    
     active: boolean= false;
     taken: boolean=false;
