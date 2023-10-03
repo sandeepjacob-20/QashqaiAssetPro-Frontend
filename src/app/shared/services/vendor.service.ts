@@ -3,7 +3,8 @@ import{ HttpClient } from '@angular/common/http';
 import{environment} from 'src/environments/environment'
 import { Vendor } from '../model/vendor';
 import { Observable } from 'rxjs';
-import { Assettype } from '../model/assettype';
+import { Asset } from '../model/asset';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class VendorService {
   //list of vendors
   vendors:Vendor[];
   //list of assettypes
-  assettypes:Assettype[];
+  assettypes:Asset[];
   constructor(private httpClient:HttpClient) { }
   
   //listing all vendors
@@ -49,7 +50,7 @@ getAllAssets():void{
   .toPromise()
   .then(response =>{
     console.log(response);
-    this.assettypes=response as Assettype[];
+    this.assettypes=response as Asset[];
   },
   error=>{
     console.log('Error')
