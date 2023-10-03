@@ -21,7 +21,7 @@
                 [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
                 <option value=0 selected disabled>---Select Asset Type-----------</option>
                 <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
-                    {{ast.assettype}}
+                    {{ast.assetType}}
                 </option>
             </select>
         </div>
@@ -33,7 +33,7 @@
                 [(ngModel)]="assetService.formAssetData.assetClassId" class="form-control">
                 <option value=0 selected disabled>---Select Asset Type-----------</option>
                 <option *ngFor="let ast of assetService.assetclass" value="{{ast.assetClassId}}">
-                    {{ast.assetclass}}
+                    {{ast.assetClass}}
                 </option>
             </select>
         </div>

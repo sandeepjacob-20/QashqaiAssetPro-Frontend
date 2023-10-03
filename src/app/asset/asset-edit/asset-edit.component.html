@@ -30,7 +30,7 @@
     <label>Asset Type </label>
     <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="assetService.formAssetData.assetId"  class="form-control" required>
         <option value="0" selected disabled>---Select Asset Type</option>
-        <option *ngFor="let assettype of assetService.assettypes" value="{{assettype.assetId}}">{{assettype.assetType}}</option>
+        <option *ngFor="let assettype of assetService.asset" value="{{assettype.assetId}}">{{assettype.assetType}}</option>
     </select>
     <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
         <div *ngIf="assetId.errors.required">

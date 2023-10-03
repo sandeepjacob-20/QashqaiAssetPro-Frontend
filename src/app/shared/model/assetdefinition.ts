@@ -1,7 +1,7 @@
 import { Assetclass } from './assetclass';
 import { Asset } from './asset';
 export class AssetDefinition {
-    adId: number = 0;
+    adId: number = 5;
     adName: string = '';
     assetId: number = 0;
     assettype:Asset=new Asset();

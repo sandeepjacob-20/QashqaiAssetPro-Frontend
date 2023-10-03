@@ -13,6 +13,8 @@ export class AssetAddComponent implements OnInit {
   constructor(public assetService:AssetService,private router:Router) { }
 
   ngOnInit(): void {
+    this.assetService.getAllAssetType();
+    this.assetService.getAllAssetClass();
   }
   //Insert
   insertVendor(form?:NgForm){
