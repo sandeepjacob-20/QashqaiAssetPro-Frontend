@@ -15,9 +15,17 @@ export class PurchaseListallComponent implements OnInit {
     this.purchaseService.getAllOrders();
   }
    //getting order data
-   populateEmployeeData(purchase:Purchase){
+   populateOrderData(purchase:Purchase){
     this.purchaseService.formOrderData=Object.assign({},purchase)//converting employee(only string) to object as formdata is object
   }
   
+  
+  //update
+  updateOrder(purchase:Purchase){
+    console.log(purchase);
+    this.populateOrderData(purchase);
+    this.router.navigate(['/purchase/edit',purchase.pdId])
+  }
+
   
 }
