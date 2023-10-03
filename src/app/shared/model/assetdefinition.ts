@@ -4,9 +4,9 @@ export class AssetDefinition {
     adId: number = 0;
     adName: string = '';
     assetId: number = 0;
-    assettype:Asset=new Asset();
+    assettype: Asset = new Asset();
     assetClassId: number = 0;
-    assetclass:Assetclass=new Assetclass();
+    assetclass: Assetclass = new Assetclass();
     active: boolean = false;
 
 }

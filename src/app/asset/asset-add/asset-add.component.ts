@@ -13,25 +13,29 @@ export class AssetAddComponent implements OnInit {
   constructor(public assetService:AssetService,private router:Router) { }
 
   ngOnInit(): void {
+    this.assetService.getAllAssetType();
+    this.assetService.getAllAssetClass();
   }
-  //Insert
-  insertVendor(form?:NgForm){
-    console.log("Inserting...");
-    this.assetService.insertAsset(form.value).subscribe(
-      (response)=>{console.log(response);},
-      (error)=>{
-        console.log(error);
-      }
-    )
+  //insert asset
+  addAsset(form: NgForm) {
+    console.log("inserting....");
+    this.assetService.insertAsset(form.value)
+      .subscribe(
+        (Response) => {
+          console.log(Response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
   }
 //Submit form
 onSubmit(form?:NgForm){
   console.log(form.value)
   //insert
-  this.assetService.insertAsset(form.value);
+  this.addAsset(form);
   form.resetForm();
-  this.router.navigateByUrl("/asset/list")
-  //this.rouer.navigate([url])
-  
+  //routing 
+  this.router.navigateByUrl("/asset/list");  
 }
 }

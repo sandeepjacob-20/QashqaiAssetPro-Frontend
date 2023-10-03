@@ -10,61 +10,63 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AssetService {
-  formAssetData:AssetDefinition=new AssetDefinition();
-  assetdefinition:AssetDefinition[];
-  assettypes:Asset[];
-  asset:Asset[];
-  assetclass:Assetclass[];
-  constructor(private httpClient:HttpClient) { }
-  getAllAsset():void{
+
+  formAssetData: AssetDefinition = new AssetDefinition();
+  assetdefinition: AssetDefinition[];
+  // assettypes: Asset[];
+  asset: Asset[];
+  assetclass: Assetclass[];
+  constructor(private httpClient: HttpClient) { }
+  getAllAsset(): void {
     //getting the data
-    this.httpClient.get(environment.apiURL+'/api/assetdefinition')
-    .toPromise()
-    .then(response =>{
-      console.log(response);
-      this.assetdefinition=response as AssetDefinition[];
-    },
-    error=>{
-      console.log('Error')
-    })
+    this.httpClient.get(environment.apiURL + '/api/assetdefinition')
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.assetdefinition = response as AssetDefinition[];
+      },
+        error => {
+          console.log('Error')
+        })
   }
 
-  getAllAssetType(): void{
-    this.httpClient.get(environment.apiURL+'/api/asset')
-    .toPromise()
-    .then(response => {
-      console.log(response)
-      this.assettypes = response as Asset[]
-    },
-    error=>{
-      console.log(error)
-    });
-    
+  getAllAssetType(): void {
+    this.httpClient.get(environment.apiURL + '/api/asset')
+      .toPromise()
+      .then(response => {
+        console.log(response)
+        this.asset = response as Asset[]
+      },
+        error => {
+          console.log(error)
+        });
+
   }
 
-  getAllAssetClass(): void{
-    this.httpClient.get(environment.apiURL+'/api/assetClass')
-    .toPromise()
-    .then(response => {
-      console.log(response)
-      this.assetclass = response as Assetclass[]
-    },
-    error=>{
-      console.log(error)
-    });
-    
+  getAllAssetClass(): void {
+    this.httpClient.get(environment.apiURL + '/api/assetclass')
+      .toPromise()
+      .then(response => {
+        console.log(response)
+        this.assetclass = response as Assetclass[]
+      },
+        error => {
+          console.log(error)
+        });
+
   }
   //adding assetdefintion
-   insertAsset(asset:Asset):Observable<any>{
-    return this.httpClient.post(environment.apiURL+'/api/assetdefinition',asset)
-   }
+  insertAsset(assetdefinition: AssetDefinition): Observable<any> {
+    console.log(assetdefinition);
+    return this.httpClient.post(environment.apiURL + '/api/assetdefinition', assetdefinition);
+  }
   //disable
-  disableAsset(id:number){
-    return this.httpClient.get(environment.apiURL+'/api/assetdefinition/deactivate/'+id)
+  disableAsset(id: number) {
+    return this.httpClient.get(environment.apiURL + '/api/assetdefinition/deactivate/' + id)
   }
   // //update
-   updateAsset(asset:Asset):Observable<any>{
-   return this.httpClient.put(environment.apiURL+'/api/assetdefinition',asset)
-   }
+  updateAsset(assetdefinition: AssetDefinition): Observable<any> {
+    return this.httpClient.put(environment.apiURL + '/api/assetdefinition', assetdefinition)
+  }
 
 }
