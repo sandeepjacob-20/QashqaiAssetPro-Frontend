@@ -1,44 +1,44 @@
-<!-- <div class="'container">
+<div class="'container">
     <h3>New Order Info</h3>
-    <hr> -->
+    <hr>
     <!-- Template Driven Form -->
-    <!-- <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) "> -->
+    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) ">
         <!-- Employee Id -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <input type="hidden" readonly name="pdId" [(ngModel)]="purchaseService.formOrderData.pdId" />
         </div>
         <div class="form-group">
             <label for="Order Id">Order Number</label>
             <input type="text" name="pdOrder" [(ngModel)]="purchaseService.formOrderData.pdOrder" />
-        </div> -->
-        <!-- <div class="form-group">
+        </div> 
+         <div class="form-group">
             <label for="Order Id">Quantity</label>
             <input type="number" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
-        </div> -->
+        </div>
         <!-- Date of Order -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label>Order Date</label>
             <input name="pdDate" #pdDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDate"
                 class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDate.touched && pdDate.invalid}" /> -->
+                [ngClass]="{'is-invalid':pdDate.touched && pdDate.invalid}" /> 
             <!-- Validation Error Message -->
-            <!-- <div class="validation-error" *ngIf="pdDate.touched && pdDate.invalid">
+            <div class="validation-error" *ngIf="pdDate.touched && pdDate.invalid">
                 <div *ngIf="pdDate.errors.required">
                     Order Date is invalid or required!</div>
             </div>
-        </div> -->
+        </div> 
         <!-- Date of Delivery -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label> Delivery Date</label>
             <input name="pdDDate" #pdDDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDDate"
                 class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDDate.touched && pdDDate.invalid}" /> -->
+                [ngClass]="{'is-invalid':pdDDate.touched && pdDDate.invalid}" />
             <!-- Validation Error Message -->
-            <!-- <div class="validation-error" *ngIf="pdDDate.touched && pdDDate.invalid">
+            <div class="validation-error" *ngIf="pdDDate.touched && pdDDate.invalid">
                 <div *ngIf="pdDDate.errors.required">
                     Delivery Date is invalid or required!</div>
             </div>
-        </div>
+        </div> 
         <!-- AssetType Name -->
         <div class="form-group">
             <label>AssetType Name</label>
@@ -60,9 +60,9 @@
                     {{ass.adName}}
                 </option>
             </select>
-        </div> -->
+        </div> 
         <!-- Vendor Name -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label>Vendor Name</label>
             <select name="vendorId" id="vendorId" #vendorId="ngModel"
                 [(ngModel)]="purchaseService.formOrderData.vendorId" class="form-control">
@@ -71,9 +71,9 @@
                     {{ven.vendorName}}
                 </option>
             </select>
-        </div> -->
+        </div> 
         <!-- isactive -->
-        <!-- <div class="form-group">
+       <div class="form-group">
 
             <div class="form-check">
                 <input type="checkbox" name="active" #active="ngModel"
@@ -84,7 +84,7 @@
         <br>
         <div class="'form-group">
 
-        </div>
+        </div> 
         <div class="'form-group">
             <label for="Status">Status</label>
             <input type="text" readonly name="statusId" [(ngModel)]="purchaseService.formOrderData.statusId" value="1" />
@@ -95,4 +95,4 @@
 
 
 </form>
-</div> -->
+</div>

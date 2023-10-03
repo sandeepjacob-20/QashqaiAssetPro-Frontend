@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class AssetService {
   formAssetData:AssetDefinition=new AssetDefinition();
   assetdefinition:AssetDefinition[];
+  assettypes:Asset[];
   asset:Asset[];
   assetclass:Assetclass[];
   constructor(private httpClient:HttpClient) { }
@@ -33,7 +34,7 @@ export class AssetService {
     .toPromise()
     .then(response => {
       console.log(response)
-      this.asset = response as Asset[]
+      this.assettypes = response as Asset[]
     },
     error=>{
       console.log(error)
