@@ -9,14 +9,11 @@ import { PurchaseComponent } from './purchase/purchase.component';
 const routes: Routes = [
   //default route
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
-  
   //lazy loading
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: HomeComponent, loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'purchase', component: PurchaseComponent, loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
-  { path:'vendors', component: VendorComponent, loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule) },
-  { path:'asset', component: AuthComponent, loadChildren: () => import('./asset/asset.module').then(x => x.AssetModule) },
-
+  {path:'vendors',component: VendorComponent,loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule)},
    //wildcard route for page not found - should be last route
   { path: '**', component: NotFoundComponent }
 ];
