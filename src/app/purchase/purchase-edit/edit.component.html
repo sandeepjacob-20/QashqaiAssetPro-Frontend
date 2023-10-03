@@ -91,7 +91,7 @@
             <select name="statusId" id="statusId" #statusId="ngModel"
                 [(ngModel)]="purchaseService.formOrderData.statusId" class="form-control">
                 <option value=0 selected disabled>---Select Status-----------</option>
-                <option *ngFor="let s of purchaseService.status" value="{{s.statusId}}">
+                <option *ngFor="let s of purchaseService.purchaseStatus" value="{{s.statusId}}">
                     {{s.status}}
                 </option>
             </select>

@@ -1,4 +1,4 @@
-import { Status } from './status';
+import { Status } from './PurchaseStatus';
 
 describe('Status', () => {
   it('should create an instance', () => {

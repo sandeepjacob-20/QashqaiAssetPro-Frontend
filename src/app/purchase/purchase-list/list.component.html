@@ -18,6 +18,7 @@
                 <th>Asset Type</th>
                 <th>Asset Name</th>
                 <th>Vendor Name</th>
+                <th>Status</th>
                 <th>Action</th>
                 
 
@@ -33,6 +34,7 @@
                 <td>{{purchase.asset.assetType}}</td>
                 <td>{{purchase.assetDefinition.adName}}</td>
                 <td>{{purchase.vendor.vendorName}}</td>
+                <td>{{purchase.purchaseStatus.status}}</td>
                 <td><button type="button" class="btn btn-sm btn-outline-info"(click)="updateOrders(purchase)"><i class="fa fa-edit"></i></button>
                     &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td>
 

@@ -8,12 +8,12 @@
             <input type="hidden" readonly name="pdId" [(ngModel)]="purchaseService.formOrderData.pdId" />
         </div>
         <div class="form-group">
-            <label for="Order Id">Order Number</label>
+            <label for="Order Id">Order Number:</label>
             <input type="text" name="pdOrder" [(ngModel)]="purchaseService.formOrderData.pdOrder" />
         </div> 
          <div class="form-group">
-            <label for="Order Id">Quantity</label>
-            <input type="number" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
+            <label for="Order Id">Quantity:</label>
+            <input type="text" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
         </div>
         <!-- Date of Order -->
         <div class="form-group">
@@ -83,8 +83,8 @@
         </div>
         <br>
         <div class="'form-group">
-            <label for="Status">Status</label>
-            <input type="text" readonly name="statusId" [(ngModel)]="purchaseService.formOrderData.statusId" value="1" />
+            <label for="Status">Status:</label>
+            <input  type="text" name="statusId" value="PO - Raised with Supplier "/>
         </div> 
         <div class="form-group">
             

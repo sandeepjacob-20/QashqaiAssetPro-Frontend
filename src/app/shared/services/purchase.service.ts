@@ -6,7 +6,8 @@ import { Vendor } from '../model/vendor';
 import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
 import { Observable } from 'rxjs';
-import { Status } from '../model/status';
+import { PurchaseStatus } from '../model/purchaseStatus';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class PurchaseService {
   purchase: Purchase[];
   vendor: Vendor[];
   asset: Asset[];
-  status:Status[];
+  purchaseStatus:PurchaseStatus[];
   assetDefinition: AssetDefinition[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
@@ -85,7 +86,7 @@ export class PurchaseService {
     .toPromise()
     .then(response => {
       console.log(response)
-      this.status = response as Status[]
+      this.purchaseStatus = response as PurchaseStatus[]
     },
     error=>{
       console.log(error)
