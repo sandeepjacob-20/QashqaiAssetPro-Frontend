@@ -15,6 +15,9 @@
                 <th>Quantity</th>
                 <th>Order Date</th>
                 <th>Delivery Date</th>
+                <th>Asset Type</th>
+                <th>Asset Name</th>
+                <th>Vendor Name</th>
                 <th>Action</th>
 
             </tr>
@@ -26,9 +29,13 @@
                 <td>{{purchase.pdQty}}</td>
                 <td>{{purchase.pdDate}}</td>
                 <td>{{purchase.pdDDate}}</td>
-                <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateEmployee(employee)"><i
+                <td>{{purchase.asset.assetType}}</td>
+                <td>{{purchase.assetDefinition.adName}}</td>
+                <td>{{purchase.vendor.vendorName}}</td>
+
+                <!-- <td><button type="button" class="btn btn-sm btn-outline-info" (click)=""><i
                             class="fa fa-edit"></i></button>
-                    &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td>
+                    &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td> -->
                 <!-- <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateEmployee(employee)"><i
                             class="fa fa-edit"></i></button>
                     &nbsp;<button type="button" class="btn btn-sm btn-outline-danger">X</button></td> -->
