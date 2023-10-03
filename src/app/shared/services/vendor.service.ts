@@ -11,7 +11,7 @@ export class VendorService {
   constructor(private httpClient:HttpClient) { }
   getAllVendors():void{
     //getting the data
-    this.httpClient.get(environment.apiUrl+'/api/employees')
+    this.httpClient.get(environment.apiURL+'/api/vendors')
     .toPromise()
     .then(response =>{
       console.log(response);
