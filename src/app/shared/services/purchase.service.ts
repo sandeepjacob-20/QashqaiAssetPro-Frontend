@@ -13,7 +13,7 @@ export class PurchaseService {
   formOrderData: Purchase = new Purchase();
   purchase: Purchase[];
   vendor: Vendor[];
-  assetDefinition : AssetDefinition[];
+  // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
   //1 get all orders - promise
   getAllOrders():void{
@@ -41,16 +41,16 @@ export class PurchaseService {
     });
     
   }
-  getAllAssets(): void{
-    this.httpClient.get(environment.apiURL+'/api/assetdefinition')
-    .toPromise()
-    .then(response => {
-      console.log(response)
-      this.assetdefinition = response as AssetDefinition[]
-    },
-    error=>{
-      console.log(error)
-    });
+  // getAllAssets(): void{
+  //   this.httpClient.get(environment.apiURL+'/api/assetdefinition')
+  //   .toPromise()
+  //   .then(response => {
+  //     console.log(response)
+  //     this.assetdefinition = response as AssetDefinition[]
+  //   },
+  //   error=>{
+  //     console.log(error)
+  //   });
     
-  }
+  // }
 }
