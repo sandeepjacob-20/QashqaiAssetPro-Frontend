@@ -1,81 +1,38 @@
-<div class="'container">
-    <h3>New Asset Info</h3>
-    <hr>
-    <!-- Template Driven Form -->
-    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) ">
-        <!-- Employee Id -->
-        <div class="form-group">
-            <input type="hidden" readonly name="pdId" [(ngModel)]="assetService.formOrderData.pdId" />
-        </div>
-        <div class="form-group">
-            <label for="Order Id">Order Number</label>
-            <input type="text" name="pdOrder" [(ngModel)]="purchaseService.formOrderData.pdOrder" />
-        </div>
-        <div class="form-group">
-            <label for="Order Id">Quantity</label>
-            <input type="number" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
-        </div>
-        <!-- Date of Order -->
-        <div class="form-group">
-            <label>Order Date</label>
-            <input name="pdDate" #pdDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDate"
-                class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDate.touched && pdDate.invalid}" />
-            <!-- Validation Error Message -->
-            <div class="validation-error" *ngIf="pdDate.touched && pdDate.invalid">
-                <div *ngIf="pdDate.errors.required">
-                    Order Date is invalid or required!</div>
-            </div>
-        </div>
-        <!-- Date of Delivery -->
-        <div class="form-group">
-            <label> Delivery Date</label>
-            <input name="pdDDate" #pdDDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDDate"
-                class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDDate.touched && pdDDate.invalid}" />
-            <!-- Validation Error Message -->
-            <div class="validation-error" *ngIf="pdDDate.touched && pdDDate.invalid">
-                <div *ngIf="pdDDate.errors.required">
-                    Delivery Date is invalid or required!</div>
-            </div>
-        </div>
-        <!-- Vendor Name -->
-        <!-- <div class="form-group">
-            <label>Department Id</label>
-            <select name="departmentid" id="departmentid" #departmentid="ngModel"
-                [(ngModel)]="employeeService.formEmployeeData.departmentid" class="form-control">
-                <option value=0 selected disabled>---Select Department-----------</option>
-                <option *ngFor="let dept of employeeService.departments" value="{{dept.departmentId}}">
-                    {{dept.departmentName}}
-                </option>
-            </select>
-        </div> -->
-        <!-- isactive -->
-        <div class="form-group">
+<div class="container">
+    <!--add assets-->
+    <div class="header">
+        <a [routerLink]="['/asset/add']" role="button" class="btn btn-outline-primary custom-margin">
+            <span><i class="fa fa-user-plus fa-lg"></i></span>
+            <br>Add Assets</a>&nbsp;
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Vendor Name</th>
+                <th>Vendor Type</th>
+                <th>Asset Id</th>
+                <th>Date Valid From</th>
+                <th>Date Valid To</th>
+                <th>Address</th>
+                <th>Action</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vendor of vendorService.vendors">
+                <td>{{vendor.vendorId}}</td>
+                <td>{{vendor.vendorName}}</td>
+                <td>{{vendor.vendorType}}</td>
+                <td>{{vendor.assetId}}</td>
+                <td>{{vendor.dteValidFrom|date:"dd-MMM-yyyy"}}</td>
+                <td>{{vendor.dteValidTo|date:"dd-MMM-yyyy"}}</td>
+                <td>{{vendor.address}}</td>
+                <td><button type="button" class="btn btn-sm btn-outline-info"(click)="updateVendor(vendor)"><i class="fa fa-edit"></i></button>
+                    &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="deleteEmployee(employee.id)"><i class="fa fa-trash"></i></button>
+                    <!-- &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableEmployee(employee.id)"><i class="fa-solid fa-ban"></i></button></td> -->
+                    <td><input type="checkbox" [checked]="vendor.active" disabled /></td>
 
-            <div class="form-check">
-                <input type="checkbox" name="active" #active="ngModel"
-                    [(ngModel)]="purchaseService.formOrderData.active" class="form-check-input custom-checkbox" />
-                <label class="form-check-label">Is in service</label>
-            </div>
-        </div>
-        <br>
-        <!-- Is Taken -->
-        <div class="form-group">
-
-            <div class="form-check">
-                <input type="checkbox" name="active" #active="ngModel"
-                    [(ngModel)]="purchaseService.formOrderData.taken" class="form-check-input custom-checkbox" />
-                <label class="form-check-label">Is Completed</label>
-            </div>
-        </div>
-        <br>
-        <div class="'form-group">
-            <button type="submit" class="btn btn-lg btn-primary form-control"
-                [disabled]="!(form.valid && form.dirty)">INSERT</button>
-        </div>
-
-
-
-</form>
+            </tr>
+    </table>
 </div>
