@@ -32,7 +32,7 @@ export class AssetEditComponent implements OnInit  {
 onSubmit(form:NgForm){
   console.log(form.value)
   //insert
-  this.updateAsset(form.value);
+  this.updateAsset(form);
   //resetting form
   form.resetForm();
   this.router.navigateByUrl("/asset/list")

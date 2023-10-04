@@ -16,6 +16,7 @@ export class AssetAddComponent implements OnInit {
     this.assetService.getAllAssetType();
     this.assetService.getAllAssetClass();
   }
+
   //insert asset
   addAsset(form: NgForm) {
     console.log("inserting....");
@@ -29,6 +30,7 @@ export class AssetAddComponent implements OnInit {
         }
       )
   }
+  
 //Submit form
 onSubmit(form?:NgForm){
   console.log(form.value)

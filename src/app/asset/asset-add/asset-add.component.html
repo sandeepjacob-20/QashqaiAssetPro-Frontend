@@ -1,4 +1,5 @@
   <div class="'container">
+    <!-- Adding Asset Information -->
     <h3>New Asset Info</h3>
     <hr>
     <!-- Template Driven Form -->
@@ -8,11 +9,44 @@
             <input type="hidden" readonly name="adId" value="adId" [(ngModel)]="assetService.formAssetData.adId" />
         </div>
 
-        <div class="form-group form-control">
-            <label for="assetName "></label>
-            <input type="text" name="adName" placeholder="asset Name" [(ngModel)]="assetService.formAssetData.adName" />
+
+        <!-- Asset Name -->
+    <div class="form-group">
+        <label>Asset Name</label>
+        <input
+          name="adName"
+          #adName="ngModel"
+          [(ngModel)]="assetService.formAssetData.adName"
+          class="form-control"
+          placeholder="Enter the Asset Name"
+          minlength="3"
+          maxlength="25"
+          required
+          [ngClass]="{
+            'is-invalid': adName.touched && adName.invalid
+          }"
+        />
+  
+        <!-- validation Error Message -->
+        <div
+          class="validation-error"
+          *ngIf="adName.touched && adName.invalid"
+        >
+          <div *ngIf="adName.errors.required">
+            Asset Name  is invalid or required!
+          </div>
         </div>
-         
+      </div>
+
+
+
+
+
+
+
+
+
+
        
         <!-- AssetType Name -->
          <div class="form-group">
