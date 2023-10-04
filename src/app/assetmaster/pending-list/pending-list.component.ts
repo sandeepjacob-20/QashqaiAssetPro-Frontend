@@ -32,6 +32,14 @@ export class PendingListComponent implements OnInit {
   addAssetMaster(purchase: Purchase) {
     console.log();
     purchase.statusId=5;
+    this.purchaseService.insertOrder(purchase).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
     this.populateAssetMasterData(purchase);
     this.router.navigate(['/assetmaster/add'])
   }
