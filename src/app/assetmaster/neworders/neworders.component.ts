@@ -29,4 +29,19 @@ export class NewordersComponent implements OnInit {
     this.router.navigate(['/assetmaster/editorder', purchase.pdId])
   }
 
+  //disable order
+  disableOrder(_id: number) {
+    if (confirm('Are you sure you want to DELETE this record?')) {
+      this.purchaseService.disableOrder(_id)
+        .subscribe(
+          (response) => {
+            console.log(response)
+            this.purchaseService.getAllOrders();
+          },
+          (error) => {
+            console.log(error)
+          }
+        )
+    }
+  }
 }
