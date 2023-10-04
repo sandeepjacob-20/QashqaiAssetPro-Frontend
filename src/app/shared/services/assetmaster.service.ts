@@ -11,11 +11,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AssetmasterService {
+
   // Delcaring variables
   formAssetMasterData: Assetmaster = new Assetmaster();
   asset: Asset[];
   vendors: Vendor[];
   assetdefinition: AssetDefinition[];
+  assetmaster: Assetmaster[];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -47,8 +49,8 @@ export class AssetmasterService {
         });
   }
 
-    // 3. Get all asset definitions for dropdown
-    getAllAssetDefinitions(): void {
+  // 3. Get all asset definitions for dropdown
+  getAllAssetDefinitions(): void {
     this.httpClient.get(environment.apiURL + '/api/assetdefinition')
       .toPromise()
       .then(response => {
@@ -65,6 +67,21 @@ export class AssetmasterService {
     return this.httpClient.post(environment.apiURL + '/api/addassets', assetMaster);
   }
 
-  
+  //5. Display all asset master data
+  getAssetMaster(): void {
+    this.httpClient.get(environment.apiURL + '/api/listassets')
+      .toPromise()
+      .then(response => {
+        console.log(response)
+        this.assetmaster = response as Assetmaster[]
+      },
+        error => {
+          console.log(error)
+        });
+  }
+  // 6. Disable asset master
+  disableAssetMaster(id: number) {
+    return this.httpClient.get(environment.apiURL + '/api/deleteasset/' + id)
+  }
 
 }

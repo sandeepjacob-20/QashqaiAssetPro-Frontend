@@ -9,6 +9,8 @@ import { AddComponent } from './purchase-add/add.component';
 import { FormsModule } from '@angular/forms';
 
 import { PurchaseUserEditComponent } from './purchase-user-edit/purchase-user-edit.component';
+import{Ng2SearchPipeModule } from 'ng2-search-filter';
+import{NgxPaginationModule } from 'ngx-pagination'
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { PurchaseUserEditComponent } from './purchase-user-edit/purchase-user-ed
   imports: [
     CommonModule,
     PurchaseRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class PurchaseModule { }
