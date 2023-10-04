@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import{PurchaseService} from 'src/app/shared/services/purchase.service'
+import { PurchaseService } from 'src/app/shared/services/purchase.service'
 
 @Component({
   selector: 'app-add',
@@ -10,7 +10,7 @@ import{PurchaseService} from 'src/app/shared/services/purchase.service'
 })
 export class AddComponent implements OnInit {
 
-  constructor(public purchaseService:PurchaseService, private router:Router) { }
+  constructor(public purchaseService: PurchaseService, private router: Router) { }
 
   ngOnInit(): void {
     this.purchaseService.getAllOrders();
@@ -19,6 +19,7 @@ export class AddComponent implements OnInit {
     this.purchaseService.getAllAssets();
 
   }
+<<<<<<< HEAD
 
   addOrder (form?: NgForm){
   console.log("Inserting............");
@@ -29,18 +30,29 @@ export class AddComponent implements OnInit {
     (error) =>{
       console.log(error)
     }
+=======
+  addOrder(form?: NgForm) {
+    console.log("Inserting............");
+    this.purchaseService.insertOrder(form.value).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error)
+      }
+>>>>>>> b0874863795a46cdfef46b96a8040c1d66013cd9
 
-  )
-  
-}
-//submot form
-onSubmit(form : NgForm) {
-  console.log(form.value);
-//insert
-this.addOrder(form);
-form.resetForm();
-this.router.navigateByUrl("purchase/list")
-}
+    )
+
+  }
+  //submot form
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+    //insert
+    this.addOrder(form);
+    form.resetForm();
+    this.router.navigateByUrl("purchase/list")
+  }
 }
 
 

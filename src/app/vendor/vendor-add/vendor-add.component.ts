@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from 'src/app/shared/services/vendor.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-vendor-add',
@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./vendor-add.component.scss']
 })
 export class VendorAddComponent implements OnInit {
-
+ 
   constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
@@ -19,6 +19,9 @@ export class VendorAddComponent implements OnInit {
   //Insert
   insertVendor(form?:NgForm){
     console.log("Inserting...");
+   
+ 
+
     this.vendorService.insertVendor(form.value).subscribe(
       (response)=>{console.log(response);},
       (error)=>{
