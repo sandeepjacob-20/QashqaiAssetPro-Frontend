@@ -9,10 +9,11 @@ import { PendingListComponent } from './pending-list/pending-list.component';
 import { NewordersComponent } from './neworders/neworders.component';
 import { EditordersComponent } from './editorders/editorders.component';
 import { FormsModule } from '@angular/forms';
+import { AssetmasterEditComponent } from './assetmaster-edit/assetmaster-edit.component';
 
 
 @NgModule({
-  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent, EditordersComponent],
+  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent, EditordersComponent, AssetmasterEditComponent],
   imports: [
     CommonModule,
     AssetmasterRoutingModule,

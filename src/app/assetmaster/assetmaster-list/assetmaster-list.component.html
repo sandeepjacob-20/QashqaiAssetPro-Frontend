@@ -1,1 +1,45 @@
-<p>assetmaster-list works!</p>
+<!-- List of orders -->
+<div class="container">
+   
+    <table class="table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>Asset Master ID</th>
+                <th>Asset Type</th>
+                <th>Asset Name</th>
+                <th>Model</th>
+                <th>Vendor Name</th>
+                <th>Serial Number</th>
+                <th>MFD</th>
+                <th>Purchase Date</th>           
+                <th>Warranty</th>
+                <th>Warranty From</th>
+                <th>Warranty To</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let asset of assetMasterService.assetmaster">
+                <td>{{asset.amId}}</td>
+                <td>{{asset.asset.assetType}}</td>
+                <td>{{asset.assetDefinition.adName}}</td>
+                <td>{{asset.model}}</td>
+                <td>{{asset.vendors.vendorName}}</td>
+                <td>{{asset.serialNumber}}</td>
+                <td>{{asset.yearOfManifacture}}</td>
+                <td>{{asset.purchaseDate}}</td>
+                <td>{{asset.warranty}}</td>
+                <td>{{asset.warrantyFrom}}</td>
+                <td>{{asset.warrantyTo}}</td>
+                <td style="width: 100px;"><button type="button" class="btn btn-sm btn-outline-info"(click)="editAsset(asset)"><i class="fa fa-edit"></i></button>
+                &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableAsset(asset.amId)"><i class="fa fa-trash"></i></button></td>
+            </tr>
+              
+                
+
+
+        </tbody>
+
+    </table>
+    

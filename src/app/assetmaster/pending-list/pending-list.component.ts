@@ -24,13 +24,11 @@ export class PendingListComponent implements OnInit {
     sessionStorage.setItem('assetId', purchase.assetId.toString());
     sessionStorage.setItem('vendorId', purchase.vendorId.toString());
     sessionStorage.setItem('adId', purchase.adId.toString());
-    sessionStorage.removeItem('assetId');
-    sessionStorage.removeItem('vendorId');
-    sessionStorage.removeItem('adId');
   }
 
   addAssetMaster(purchase: Purchase) {
     console.log();
+    purchase.statusId=5;
     this.populateAssetMasterData(purchase);
     this.router.navigate(['/assetmaster/add'])
   }
