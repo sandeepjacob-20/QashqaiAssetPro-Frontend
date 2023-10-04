@@ -30,8 +30,8 @@
                     <!-- <td>{{purchase.pdId}}</td> -->
                     <td>{{purchase.pdOrder}}</td>
                     <td>{{purchase.pdQty}}</td>
-                    <td>{{purchase.pdDate}}</td>
-                    <td>{{purchase.pdDDate}}</td>
+                    <td>{{purchase.pdDate| date: "dd-MMM-yyyy"}}</td>
+                    <td>{{purchase.pdDDate| date: "dd-MMM-yyyy"}}</td>
                     <td>{{purchase.asset.assetType}}</td>
                     <td>{{purchase.assetDefinition.adName}}</td>
                     <td>{{purchase.vendor.vendorName}}</td>
