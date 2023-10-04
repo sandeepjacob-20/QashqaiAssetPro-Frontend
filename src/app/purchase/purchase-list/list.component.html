@@ -1,45 +1,54 @@
 <!-- List of orders -->
 <div class="container">
-    
-    <table class="table table-striped table-bordered">
+    <div class="header">
+        <div class="row">
+            <div class="col-sm-8">
+                <input type="search" class="form-control custom-margin-search" placeholder=" search text here.."
+                    [(ngModel)]="searchTerm">
+            </div>
 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Order No.</th>
-                <th>Quantity</th>
-                <th>Order Date</th>
-                <th>Delivery Date</th>
-                <th>Asset Type</th>
-                <th>Asset Name</th>
-                <th>Vendor Name</th>
-                <th>Status</th>
-                <th>Action</th>
-                <th>Active</th>
-                
+        </div>
+        <table class="table table-striped table-bordered">
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let purchase of purchaseService.purchase">
-                <td>{{purchase.pdId}}</td>
-                <td>{{purchase.pdOrder}}</td>
-                <td>{{purchase.pdQty}}</td>
-                <td>{{purchase.pdDate}}</td>
-                <td>{{purchase.pdDDate}}</td>
-                <td>{{purchase.asset.assetType}}</td>
-                <td>{{purchase.assetDefinition.adName}}</td>
-                <td>{{purchase.vendor.vendorName}}</td>
-                <td>{{purchase.purchaseStatus.status}}</td>
-                <td><button type="button" class="btn btn-sm btn-outline-info"(click)="updateOrders(purchase)"><i class="fa fa-edit"></i></button>
-                    &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableOrder(purchase.pdId)"><i class="fa fa-trash"></i></button>
-                    <!-- &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableEmployee(employee.id)"><i class="fa-solid fa-ban"></i></button></td> -->
-                    <td><input type="checkbox" [checked]="purchase.active" disabled /></td>
-               
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Order No.</th>
+                    <th>Quantity</th>
+                    <th>Order Date</th>
+                    <th>Delivery Date</th>
+                    <th>Asset Type</th>
+                    <th>Asset Name</th>
+                    <th>Vendor Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let purchase of purchaseService.purchase |filter:searchTerm | paginate:{itemsPerPage:pageSize, currentPage:page}">
+                    <!-- <td>{{purchase.pdId}}</td> -->
+                    <td>{{purchase.pdOrder}}</td>
+                    <td>{{purchase.pdQty}}</td>
+                    <td>{{purchase.pdDate}}</td>
+                    <td>{{purchase.pdDDate}}</td>
+                    <td>{{purchase.asset.assetType}}</td>
+                    <td>{{purchase.assetDefinition.adName}}</td>
+                    <td>{{purchase.vendor.vendorName}}</td>
+                    <td>{{purchase.purchaseStatus.status}}</td>
+                    <td style="width: 100px;"><button type="button" class="btn btn-sm btn-outline-info"
+                            (click)="updateOrders(purchase)"><i class="fa fa-edit"></i></button>
+                        &nbsp;<button type="button" class="btn  btn-sm btn-danger"
+                            (click)="disableOrder(purchase.pdId)"><i class="fa fa-trash"></i></button>
+                    </td>
 
-            </tr>
+                </tr>
 
-        </tbody>
+            </tbody>
 
-    </table>
-</div>
+        </table>
+        <!-- footer -->
+        <div class="footer">
+            <pagination-controls class="custom-page" (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
