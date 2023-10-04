@@ -23,7 +23,6 @@
             <tr *ngFor="let asset of assetService.assetdefinition">
                 <td>{{asset.adId}}</td>
                 <td>{{asset.adName}}</td>
-               <td>{{asset.assetId}}</td>
                  <td>{{asset.assetTypes.assetType}}</td>
                 <td>{{asset.assetClass.assetClass}}</td> 
                 <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateAsset(asset)"><i
