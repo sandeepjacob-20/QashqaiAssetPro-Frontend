@@ -20,6 +20,9 @@ export class AssetmasterAddComponent implements OnInit {
   }
   addAssetMaster(form?: NgForm) {
     console.log("Inserting............");
+    form.value.assetId = sessionStorage.getItem('assetId');
+    form.value.vendorId = sessionStorage.getItem('vendorId');
+    form.value.adId = sessionStorage.getItem('adId');
     this.assetmasterService.insertAssetMaster(form.value).subscribe(
       (response) => {
         console.log(response);
