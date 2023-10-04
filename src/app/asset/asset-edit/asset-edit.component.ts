@@ -14,8 +14,10 @@ export class AssetEditComponent implements OnInit  {
 
   ngOnInit(): void {
     this.assetService.getAllAsset();
+    this.assetService.getAllAssetType();
+    this.assetService.getAllAssetClass();
   }
-  updateVendor(form?:NgForm){
+  updateAsset(form?:NgForm){
     console.log("Editing...");
     this.assetService.updateAsset(form.value).subscribe(
       (response)=>{console.log(response);},
@@ -28,9 +30,9 @@ export class AssetEditComponent implements OnInit  {
 onSubmit(form:NgForm){
   console.log(form.value)
   //insert
-  this.updateVendor(form);
+  this.updateAsset(form.value);
   form.resetForm();
-  this.router.navigateByUrl("/assetdefinition/list")
+  this.router.navigateByUrl("/asset/list")
 }
 }
 
