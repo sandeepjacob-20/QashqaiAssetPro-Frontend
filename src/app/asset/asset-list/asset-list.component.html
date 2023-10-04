@@ -9,6 +9,7 @@
             <div class="col-sm-4">
 
           <br>
+          <br>
            <!-- <a [routerLink]="['/asset/add']" role="button" class="btn btn-outline-primary custom-margin">
             
             <br>Add Assets</a>&nbsp; -->
@@ -29,7 +30,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let asset of assetService.assetdefinition | filter:searchTerm | paginate: { itemsPerPage: page, currentPage: page }">
+            <tr *ngFor="let asset of assetService.assetdefinition | filter:searchTerm | paginate: { itemsPerPage: pageSize, currentPage: page }">
                 <td>{{asset.adName}}</td>
                  <td>{{asset.assetTypes.assetType}}</td>
                 <td>{{asset.assetClass.assetClass}}</td> 
