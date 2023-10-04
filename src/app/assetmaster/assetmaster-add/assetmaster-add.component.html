@@ -70,7 +70,7 @@
             </select>
         </div>
         <!-- Warranty From -->
-        <div class="form-group" *ngIf="assetmasterService.formAssetMasterData.warranty">
+        <div class="form-group" *ngIf="assetmasterService.formAssetMasterData.warranty == 'Y'">
             <label> Warranty From Date</label>
             <input name="warrantyFrom" #warrantyFrom="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.warrantyFrom"
                 class="form-control" placeholder="enter Warranty from Date" required
@@ -82,7 +82,7 @@
             </div>
         </div>
         <!-- Warranty To -->
-        <div class="form-group"  *ngIf="assetmasterService.formAssetMasterData.warranty">
+        <div class="form-group"  *ngIf="assetmasterService.formAssetMasterData.warranty == 'Y'">
             <label> Warranty To Date</label>
             <input name="warrantyTo" #warrantyTo="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.warrantyTo"
                 class="form-control" placeholder="enter Warranty to Date" required

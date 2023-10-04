@@ -6,9 +6,9 @@ import { AuthGuard } from '../auth/auth.guard';
 import { VendorEditComponent } from './vendor-edit/vendor-edit.component';
 
 const routes: Routes = [
-  { path: 'add', component: VendorAddComponent, canActivate: [AuthGuard], data: { role: '1' } },
-  { path: 'list', component: VendorListComponent, canActivate: [AuthGuard], data: { role: '1' } },
-  { path: 'edit/:id', component: VendorEditComponent, canActivate: [AuthGuard], data: { role: '1' } }
+  { path: 'add', component: VendorAddComponent, canActivate: [AuthGuard], data: { role: '4' } },
+  { path: 'list', component: VendorListComponent, canActivate: [AuthGuard], data: { role: '4' } },
+  { path: 'edit/:id', component: VendorEditComponent, canActivate: [AuthGuard], data: { role: '4' } }
 ];
 
 @NgModule({

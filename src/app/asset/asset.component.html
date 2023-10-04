@@ -9,6 +9,14 @@
   <li class="nav-item">
     <a class="nav-link" href="/asset/list">List Assets</a>
   </li>
+  <div class="navbar-spacer"></div>
+  <li class="nav-link custom-logo">
+    <img src="../../assets/404.jpeg" alt="" width="50px"/>
+  </li>
+  <div class="navbar-spacer-logout"></div>
+  <li class="nav-item">
+    <button class="btn btn-danger nav-item" (click)="LogOut()">LogOut</button>
+  </li>
 </ul>
 <!-- END OF NAVBAR -->
 <router-outlet></router-outlet>

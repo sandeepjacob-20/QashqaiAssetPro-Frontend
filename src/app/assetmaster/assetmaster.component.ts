@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-assetmaster',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetmasterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  LogOut(): void {
+    console.log("Logout");
+    this.authService.logOut();
+  }
 }

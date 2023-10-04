@@ -6,9 +6,9 @@ import { AuthGuard } from '../auth/auth.guard';
 import { AssetEditComponent } from './asset-edit/asset-edit.component';
 
 const routes: Routes = [
-  { path: 'add', component: AssetAddComponent, canActivate: [AuthGuard], data: { role: '1' } },
-  {path:"edit/:id",component: AssetEditComponent,canActivate: [AuthGuard], data: { role: '1' }},
-  { path: 'list', component: AssetListComponent, canActivate: [AuthGuard], data: { role: '1' } },
+  { path: 'add', component: AssetAddComponent, canActivate: [AuthGuard], data: { role: '3' } },
+  {path:"edit/:id",component: AssetEditComponent,canActivate: [AuthGuard], data: { role: '3' }},
+  { path: 'list', component: AssetListComponent, canActivate: [AuthGuard], data: { role: '3' } },
 ];
 
 @NgModule({
