@@ -13,14 +13,15 @@
         </div> 
          <div class="form-group">
             <label for="Order Id">Quantity:</label>
-            <input type="text" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
+            <input type="number" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
         </div>
         <!-- Date of Order -->
         <div class="form-group">
             <label>Order Date</label>
             <input name="pdDate" #pdDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDate"
                 class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDate.touched && pdDate.invalid}" /> 
+                [ngClass]="{'is-invalid':pdDate.touched && pdDate.invalid}" 
+                /> 
             <!-- Validation Error Message -->
             <div class="validation-error" *ngIf="pdDate.touched && pdDate.invalid">
                 <div *ngIf="pdDate.errors.required">
@@ -32,7 +33,8 @@
             <label> Delivery Date</label>
             <input name="pdDDate" #pdDDate="ngModel" type="date" [(ngModel)]="purchaseService.formOrderData.pdDDate"
                 class="form-control" placeholder="enter Order Date" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':pdDDate.touched && pdDDate.invalid}" />
+                [ngClass]="{'is-invalid':pdDDate.touched && pdDDate.invalid}" 
+                [min]="purchaseService.formOrderData.pdDate"/>
             <!-- Validation Error Message -->
             <div class="validation-error" *ngIf="pdDDate.touched && pdDDate.invalid">
                 <div *ngIf="pdDDate.errors.required">
