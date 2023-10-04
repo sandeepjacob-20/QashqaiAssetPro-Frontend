@@ -28,14 +28,15 @@
     <!-- vendor type -->
     <div class="form-group">
         <label>Vendor Type</label>
-        <select name="vendorType" id="vendorType">
-            <option value="0" selected disabled>---Select vendor type</option>
+        <select name="vendorType" id="vendorType" #vendorType="ngModel" [(ngModel)]="vendorService.formVendorData.vendorType"  class="form-control" required>
+            <option value="0" selected disabled>---Select Vendor Type</option>
+            
             <option value="supplier">Supplier</option>
         </select>
         <!-- <input name="vendorType" #designation="ngModel"  [(ngModel)]="vendorService.formVendorData.vendorType"
-        [ngClass]="{'is-invalid':designation.touched && designation.invalid}" readonly/>
-        -->
-        </div>
+    [ngClass]="{'is-invalid':designation.touched && designation.invalid}" readonly/>
+    -->
+    </div>
     
         <!-- date valid from -->
     <div class="form-group">

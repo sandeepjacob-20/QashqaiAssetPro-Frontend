@@ -15,19 +15,23 @@ export class AssetListComponent implements OnInit {
   ngOnInit(): void {
     console.log("Hi, i'm in asset-list component")
     this.assetService.getAllAsset();
+    this.assetService.getAllAssetClass();
+    this.assetService.getAllAssetType();
   }
+
+  //updating asset
   updateAsset(assetdefinition:AssetDefinition){
     console.log(assetdefinition);
     this.populateAssetData(assetdefinition);
     this.router.navigate(['asset/edit',assetdefinition.adId])
   }
 
-   //getting vendor data
+   //getting asset data
    populateAssetData(assetdefinition:AssetDefinition){
     this.assetService.formAssetData=Object.assign({},assetdefinition)//converting employee(only string) to object as formdata is object
   }
 
-  //disable vendor
+  //disable asset
   disableAsset(id:number){
     if(confirm('Are you sure you want to DELETE this record?')){
       this.assetService.disableAsset(id)
