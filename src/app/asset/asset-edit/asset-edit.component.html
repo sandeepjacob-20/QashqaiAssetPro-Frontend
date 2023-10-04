@@ -28,10 +28,17 @@
 <!-- dropdown list for asset type -->
 <div class="form-group">
     <label>Asset Type </label>
-    <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="assetService.formAssetData.assetId"  class="form-control" required>
+    <!-- <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="assetService.formAssetData.assetId"  class="form-control" required>
         <option value="0" selected disabled>---Select Asset Type</option>
         <option *ngFor="let assettype of assetService.asset" value="{{assettype.assetId}}">{{assettype.assetType}}</option>
-    </select>
+    </select> -->
+    <select name="assetId" id="assetId" #assetId="ngModel"
+                [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
+                <option value=0 selected disabled>---Select Asset Type-----------</option>
+                <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
+                    {{ast.assetType}}
+                </option>
+            </select>
     <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
         <div *ngIf="assetId.errors.required">
             assetId is invalid or required!

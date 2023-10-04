@@ -62,11 +62,11 @@ export class AssetService {
   }
   //disable
   disableAsset(id: number) {
-    return this.httpClient.get(environment.apiURL + '/api/assetdefinition/deactivate/' + id)
+    return this.httpClient.get(environment.apiURL + '/api/assetdefinition/delete/' + id)
   }
   // //update
-   updateAsset(asset:Asset):Observable<any>{
-   return this.httpClient.put(environment.apiURL+'/api/assetdefinition',asset)
+   updateAsset(assetdefinition:AssetDefinition):Observable<any>{
+   return this.httpClient.put(environment.apiURL+'/api/assetdefinition',assetdefinition)
    }
 
 }
