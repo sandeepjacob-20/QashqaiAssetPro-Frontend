@@ -47,8 +47,8 @@ export class AssetmasterService {
         });
   }
 
-  // 3. Get all asset definitions for dropdown
-  getAllAssetDefinitions(): void {
+    // 3. Get all asset definitions for dropdown
+    getAllAssetDefinitions(): void {
     this.httpClient.get(environment.apiURL + '/api/assetdefinition')
       .toPromise()
       .then(response => {
