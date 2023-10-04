@@ -19,7 +19,7 @@ export class Assetmaster {
     serialNumber: number = 0;
     yearOfManifacture: Date = new Date;
     purchaseDate: Date = new Date;
-    warranty: CharacterData = new CharacterData;
+    warranty: string = '';
     warrantyFrom: Date = new Date;
     warrantyTo: Date = new Date;
     taken: boolean = false;
