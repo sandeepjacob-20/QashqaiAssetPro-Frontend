@@ -5,13 +5,14 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Vendor } from '../model/vendor';
 import { AssetDefinition } from '../model/assetdefinition';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AssetmasterService {
   // Delcaring variables
-  formOrderData: Assetmaster = new Assetmaster();
+  formAssetMasterData: Assetmaster = new Assetmaster();
   asset: Asset[];
   vendors: Vendor[];
   assetdefinition: AssetDefinition[];
@@ -46,8 +47,8 @@ export class AssetmasterService {
         });
   }
 
-  // 3. Get all asset definitions for dropdown
-  getAllAssetDefinitions(): void {
+    // 3. Get all asset definitions for dropdown
+    getAllAssetDefinitions(): void {
     this.httpClient.get(environment.apiURL + '/api/assetdefinition')
       .toPromise()
       .then(response => {
@@ -59,7 +60,11 @@ export class AssetmasterService {
         });
   }
 
-  // 4. Disabling orders
+  // 4. adding asset master
+  insertAssetMaster(assetMaster: Assetmaster): Observable<any> {
+    return this.httpClient.post(environment.apiURL + '/api/addassets', assetMaster);
+  }
+
   
 
 }

@@ -23,9 +23,15 @@
             <tr *ngFor="let asset of assetService.assetdefinition">
                 <td>{{asset.adId}}</td>
                 <td>{{asset.adName}}</td>
+<<<<<<< HEAD
 
                  <td>{{asset.asset.assetType}}</td>
                 <td>{{asset.assetclass.assetClass}}</td> 
+=======
+               <td>{{asset.assetId}}</td>
+                 <td>{{asset.assetTypes.assetType}}</td>
+                <td>{{asset.assetClass.assetClass}}</td> 
+>>>>>>> bff1fc2fe18c00edd460a9dfa2d285d0fc147f98
                 <td><button type="button" class="btn btn-sm btn-outline-info" (click)="updateAsset(asset)"><i
                             class="fa fa-edit"></i></button>
                             &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableAsset(asset.adId)"><i class="fa fa-trash"></i></button>
