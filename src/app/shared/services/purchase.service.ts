@@ -51,6 +51,11 @@ export class PurchaseService {
         });
 
   }
+//INSERT Vendor
+insertOrder(purchase: Purchase): Observable<any> {
+  console.log(purchase);
+  return this.httpClient.post(environment.apiURL + '/api/orders/insert', purchase);
+}
 //get all vendors
   getAllVendors(): void{
     this.httpClient.get(environment.apiURL+'/api/vendors')
