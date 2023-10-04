@@ -51,7 +51,8 @@
             <label> Purchase Date</label>
             <input name="purchaseDate" #purchaseDate="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.purchaseDate"
                 class="form-control" placeholder="enter Purchase Date" required
-                [ngClass]="{'is-invalid':purchaseDate.touched && purchaseDate.invalid}" />
+                [ngClass]="{'is-invalid':purchaseDate.touched && purchaseDate.invalid}" 
+                [min]="assetmasterService.formAssetMasterData.yearOfManifacture"/>
             <!-- Validation Error Message -->
             <div class="validation-error" *ngIf="purchaseDate.touched && purchaseDate.invalid">
                 <div *ngIf="purchaseDate.errors.required">
