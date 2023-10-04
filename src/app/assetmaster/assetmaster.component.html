@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link active" href="/home/admin">Home</a>
+    <a class="nav-link active" href="/assetmaster">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/assetmaster/neworders">New Orders</a>
@@ -11,6 +11,14 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/assetmaster/list">Asset Master List</a>
+  </li>
+  <div class="navbar-spacer"></div>
+  <li class="nav-link custom-logo">
+    <img src="../../assets/404.jpeg" alt="" width="50px"/>
+  </li>
+  <div class="navbar-spacer-logout"></div>
+  <li class="nav-item">
+    <button class="btn btn-danger nav-item" (click)="LogOut()">LogOut</button>
   </li>
 </ul>
 <!-- END OF NAVBAR -->
