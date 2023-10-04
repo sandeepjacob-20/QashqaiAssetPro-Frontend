@@ -5,16 +5,23 @@ import{environment} from 'src/environments/environment';
 import { Vendor } from '../model/vendor';
 import { AssetDefinition } from '../model/assetdefinition';
 import { Asset } from '../model/asset';
+import { Observable } from 'rxjs';
+import { PurchaseStatus } from '../model/purchaseStatus';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PurchaseService {
+  updateOrder(value: any) {
+    throw new Error('Method not implemented.');
+  }
   //declare variables-------global variables
   formOrderData: Purchase = new Purchase();
   purchase: Purchase[];
   vendor: Vendor[];
   asset: Asset[];
+  purchaseStatus:PurchaseStatus[];
   assetDefinition: AssetDefinition[];
   // assetDefinition : AssetDefinition[];
   constructor(private httpClient: HttpClient) { }
@@ -31,6 +38,19 @@ export class PurchaseService {
     });
  
 }
+//get some orders whose status is 4
+  getSomeOrders(): void {
+    this.httpClient.get(environment.apiURL + '/api/orders/listbystatus')
+      .toPromise()
+      .then(response => {
+        console.log(response)
+        this.purchase = response as Purchase[]
+      },
+        error => {
+          console.log(error)
+        });
+
+  }
 //get all vendors
   getAllVendors(): void{
     this.httpClient.get(environment.apiURL+'/api/vendors')
@@ -67,5 +87,23 @@ export class PurchaseService {
       console.log(error)
     });
     
+  }
+  
+  //update
+  updateOrders(purchase:Purchase):Observable<any>{
+    return this.httpClient.put(environment.apiURL+'/api/orders/edit',purchase)
+  }
+
+  //getallStatus
+  getAllStatus():void{
+    this.httpClient.get(environment.apiURL+'/api/status/get')
+    .toPromise()
+    .then(response => {
+      console.log(response)
+      this.purchaseStatus = response as PurchaseStatus[]
+    },
+    error=>{
+      console.log(error)
+    });
   }
 }

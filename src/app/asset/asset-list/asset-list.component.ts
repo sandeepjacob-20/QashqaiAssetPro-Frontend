@@ -12,7 +12,7 @@ export class AssetListComponent implements OnInit {
   constructor(public assetService:AssetService,private router:Router) { }
 
   ngOnInit(): void {
-    console.log("HIIIIIIIIIIII im in asset-list component")
+    console.log("Hi, i'm in asset-list component")
     this.assetService.getAllAsset();
   }
   

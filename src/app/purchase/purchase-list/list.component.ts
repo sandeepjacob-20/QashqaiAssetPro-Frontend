@@ -13,13 +13,18 @@ export class ListComponent implements OnInit {
   constructor(public purchaseService:PurchaseService, private router:Router) { }
 
   ngOnInit(): void {
-    console.log("hi i am employeeListComponentlo")
     this.purchaseService.getAllOrders();
     }
 
     //getting order data
-populateEmployeeData(purchase:Purchase){
+populateOrderData(purchase:Purchase){
   this.purchaseService.formOrderData=Object.assign({},purchase)//converting employee(only string) to object as formdata is object
+}
+//update
+updateOrders(purchase:Purchase){
+  console.log(purchase);
+  this.populateOrderData(purchase);
+  this.router.navigate(['/purchase/useredit',purchase.pdId])
 }
 
 }
