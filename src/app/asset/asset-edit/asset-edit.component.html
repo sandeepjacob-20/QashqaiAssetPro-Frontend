@@ -49,7 +49,7 @@
     <label>Asset Class </label>
     <select name="assetClassId" id="assetClassId" #assetClassId="ngModel" [(ngModel)]="assetService.formAssetData.assetClassId"  class="form-control" required>
         <option value="0" selected disabled>---Select Asset Class</option>
-        <option *ngFor="let assetclass of assetService.assetclass" value="{{assettype.assetClassId}}">{{assetclass.assetClass}}</option>
+        <option *ngFor="let assetclass of assetService.assetclass" value="{{assetclass.assetClassId}}">{{assetclass.assetClass}}</option>
     </select>
     <div class="validation-error" *ngIf="assetClassId.touched&&assetClassId.invalid">
         <div *ngIf="assetClassId.errors.required">
