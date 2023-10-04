@@ -21,7 +21,7 @@ export class AssetEditComponent implements OnInit  {
   //updating or editing asset
   updateAsset(form?:NgForm){
     console.log("Editing...");
-    this.assetService.updateAsset(form.value).subscribe(
+    this.assetService.insertAsset(form.value).subscribe(
       (response)=>{console.log(response);},
       (error)=>{
         console.log(error);

@@ -10,11 +10,18 @@ import { AssetService } from 'src/app/shared/services/asset.service';
 })
 export class AssetListComponent implements OnInit {
 
+  //declare variable
+  searchTerm='';
+  page:number=1;
+  pageSize=5;
+
   constructor(public assetService:AssetService,private router:Router) { }
 
   ngOnInit(): void {
+    
     console.log("Hi, i'm in asset-list component")
     this.assetService.getAllAsset();
+    
     this.assetService.getAllAssetClass();
     this.assetService.getAllAssetType();
   }
