@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Assetmaster } from 'src/app/shared/model/assetmaster';
 import { Purchase } from 'src/app/shared/model/purchase';
 import { AssetmasterService } from 'src/app/shared/services/assetmaster.service';
 import { PurchaseService } from 'src/app/shared/services/purchase.service';
@@ -11,6 +10,10 @@ import { PurchaseService } from 'src/app/shared/services/purchase.service';
   styleUrls: ['./pending-list.component.scss']
 })
 export class PendingListComponent implements OnInit {
+  // variables for pagination and search
+  SearchTerm: string;
+  p: number;
+  pageSize: number = 5;
 
   constructor(public purchaseService: PurchaseService, 
     public assetmasterService: AssetmasterService,
@@ -24,13 +27,11 @@ export class PendingListComponent implements OnInit {
     sessionStorage.setItem('assetId', purchase.assetId.toString());
     sessionStorage.setItem('vendorId', purchase.vendorId.toString());
     sessionStorage.setItem('adId', purchase.adId.toString());
-    sessionStorage.removeItem('assetId');
-    sessionStorage.removeItem('vendorId');
-    sessionStorage.removeItem('adId');
   }
 
   addAssetMaster(purchase: Purchase) {
     console.log();
+    purchase.statusId=5;
     this.populateAssetMasterData(purchase);
     this.router.navigate(['/assetmaster/add'])
   }

@@ -51,8 +51,7 @@
             <label> Purchase Date</label>
             <input name="purchaseDate" #purchaseDate="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.purchaseDate"
                 class="form-control" placeholder="enter Purchase Date" required
-                [ngClass]="{'is-invalid':purchaseDate.touched && purchaseDate.invalid}" 
-                [min]="assetmasterService.formAssetMasterData.yearOfManifacture"/>
+                [ngClass]="{'is-invalid':purchaseDate.touched && purchaseDate.invalid}" />
             <!-- Validation Error Message -->
             <div class="validation-error" *ngIf="purchaseDate.touched && purchaseDate.invalid">
                 <div *ngIf="purchaseDate.errors.required">
@@ -70,7 +69,7 @@
             </select>
         </div>
         <!-- Warranty From -->
-        <div class="form-group" *ngIf="assetmasterService.formAssetMasterData.warranty == 'Y'">
+        <div class="form-group">
             <label> Warranty From Date</label>
             <input name="warrantyFrom" #warrantyFrom="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.warrantyFrom"
                 class="form-control" placeholder="enter Warranty from Date" required
@@ -82,7 +81,7 @@
             </div>
         </div>
         <!-- Warranty To -->
-        <div class="form-group"  *ngIf="assetmasterService.formAssetMasterData.warranty == 'Y'">
+        <div class="form-group">
             <label> Warranty To Date</label>
             <input name="warrantyTo" #warrantyTo="ngModel" type="date" [(ngModel)]="assetmasterService.formAssetMasterData.warrantyTo"
                 class="form-control" placeholder="enter Warranty to Date" required
@@ -104,6 +103,6 @@
         </div>
         <br>
         <button type="submit" class="btn btn-lg btn-primary form-control"
-                [disabled]="!(form.valid && form.dirty)">INSERT</button>
+                [disabled]="!(form.valid && form.dirty)">UPDATE</button>
     </form>
 </div>

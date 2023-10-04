@@ -7,6 +7,8 @@ import { AssetListComponent } from './asset-list/asset-list.component';
 import { AssetComponent } from './asset.component';
 import { FormsModule } from '@angular/forms';
 import { AssetEditComponent } from './asset-edit/asset-edit.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -14,7 +16,10 @@ import { AssetEditComponent } from './asset-edit/asset-edit.component';
   imports: [
     CommonModule,
     AssetRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    
   ]
 })
 export class AssetModule { }

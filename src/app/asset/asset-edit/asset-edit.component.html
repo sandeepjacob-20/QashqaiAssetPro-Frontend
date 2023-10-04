@@ -1,63 +1,45 @@
-<div clsss="container">
-    <h3>Edit Asset</h3>
+<div class="'container">
+    <h3>New Asset Info</h3>
     <hr>
-    <!--template driven form-->
-    <form name="frmAsset" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-    
-    <!--Asset Id-->
-    <div class="form-group">
-        <input type="hidden" readonly name="AdId" [(ngModel)]="assetService.formAssetData.adId"/>
-    </div>
-    <!-- Asset Name -->
-    <div class="form-group">
-        <label>Asset Name</label>
-        <input name="adName" #adName="ngModel"  [(ngModel)]="assetService.formAssetData.adName"
-        class="form-control"
-        placeholder="Enter Asset Name"
-        minlength="3" maxlength="25" required
-        [ngClass]="{'is-invalid':adName.touched&&adName.invalid}"/>
-    
-    <!-- validation error message -->
-    <div class="validation-error" *ngIf="adName.touched&&adName.invalid">
-        <div *ngIf="adName.errors.required">
-            Asset Name is invalid or required!
+    <!-- Template Driven Form -->
+    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) "> 
+        <!-- Asset Defintion Id -->
+        <div class="form-group">
+            <input type="hidden" readonly name="adId" value="adId" [(ngModel)]="assetService.formAssetData.adId" />
         </div>
-    </div>
-    </div>
-    
-<!-- dropdown list for asset type -->
-<div class="form-group">
-    <label>Asset Type </label>
 
-    <!-- dropdown list for asset type -->
-    <select name="assetId" id="assetId" #assetId="ngModel"
+        <div class="form-group form-control">
+            <label for="assetName "></label>
+            <input type="text" name="adName" placeholder="asset Name" [(ngModel)]="assetService.formAssetData.adName" />
+        </div>
+         
+       
+        <!-- AssetType Name -->
+         <div class="form-group">
+            <label>AssetType Name</label>
+            <select name="assetId" id="assetId" #assetId="ngModel"
                 [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
                 <option value=0 selected disabled>---Select Asset Type-----------</option>
                 <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
                     {{ast.assetType}}
                 </option>
             </select>
-    <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
-        <div *ngIf="assetId.errors.required">
-            assetId is invalid or required!
         </div>
-    </div>
-</div>
 
-<!-- dropdown list for asset class -->
-<div class="form-group">
-    <label>Asset Class </label>
-    <select name="assetClassId" id="assetClassId" #assetClassId="ngModel" [(ngModel)]="assetService.formAssetData.assetClassId"  class="form-control" required>
-        <option value="0" selected disabled>---Select Asset Class</option>
-        <option *ngFor="let assetclass of assetService.assetclass" value="{{assetclass.assetClassId}}">{{assetclass.assetClass}}</option>
-    </select>
-    <div class="validation-error" *ngIf="assetClassId.touched&&assetClassId.invalid">
-        <div *ngIf="assetClassId.errors.required">
-            assetClassId is invalid or required!
+        <!-- AssetType Name -->
+        <div class="form-group">
+            <label>AssetClass Name</label>
+            <select name="assetClassId" id="assetClassId" #assetClassId="ngModel"
+                [(ngModel)]="assetService.formAssetData.assetClassId" class="form-control">
+                <option value=0 selected disabled>---Select Asset class-----------</option>
+                <option *ngFor="let ast of assetService.assetclass" value="{{ast.assetClassId}}">
+                    {{ast.assetClass}}
+                </option>
+            </select>
         </div>
-    </div>
-</div>
-    <!-- isActive -->
+
+
+        <!-- isActive -->
     <div class="form-group">
         <div class="form-check">
             <input type="checkbox" name="active" #active="ngModel"  [(ngModel)]="assetService.formAssetData.active" class="form-check-input custom-checkbox"
@@ -69,11 +51,15 @@
         
         </div>
         <br>
-    <!-- Submit -->
-    <div class="form-group">
-        <button type="submit" class="btn btn-lg btn-primary form-control"
-        [disabled]="!(form.valid &&form.dirty)">INSERT</button>
-    </div>
-    </form>
 
-</div>
+
+        <!-- Submit -->
+        <div class="'form-group">
+            <button type="submit" class="btn btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">UPDATE</button>
+        </div>
+
+
+
+</form>
+</div> 

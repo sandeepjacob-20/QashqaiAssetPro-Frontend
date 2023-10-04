@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AssetmasterService } from 'src/app/shared/services/assetmaster.service';
 
 @Component({
-  selector: 'app-assetmaster-add',
-  templateUrl: './assetmaster-add.component.html',
-  styleUrls: ['./assetmaster-add.component.scss']
+  selector: 'app-assetmaster-edit',
+  templateUrl: './assetmaster-edit.component.html',
+  styleUrls: ['./assetmaster-edit.component.scss']
 })
-export class AssetmasterAddComponent implements OnInit {
+export class AssetmasterEditComponent implements OnInit {
 
   constructor(public assetmasterService: AssetmasterService,
     private router: Router) { }

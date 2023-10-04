@@ -7,6 +7,7 @@ import { VendorComponent} from './vendor/vendor.component'
 import { PurchaseComponent } from './purchase/purchase.component';
 import { AssetComponent } from './asset/asset.component';
 import { AssetmasterComponent } from './assetmaster/assetmaster.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   //default route
@@ -14,10 +15,13 @@ const routes: Routes = [
   //lazy loading
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: HomeComponent, loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-  { path: 'purchase', component: PurchaseComponent, loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule) },
-  { path:'vendors', component: VendorComponent, loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule) },
-  { path:'asset', component: AssetComponent, loadChildren: () => import('./asset/asset.module').then(x => x.AssetModule) },
-  { path: 'assetmaster', component: AssetmasterComponent, loadChildren: () => import('./assetmaster/assetmaster.module').then(x => x.AssetmasterModule) },
+  { path: 'purchase', component: PurchaseComponent, loadChildren: () => import('./purchase/purchase.module').then(m => m.PurchaseModule), canActivate: [AuthGuard], data: { role: '2' }  },
+
+  { path: 'vendors', component: VendorComponent, loadChildren: () => import('./vendor/vendor.module').then(x => x.VendorModule), canActivate: [AuthGuard], data: { role: '4' } },
+
+  { path: 'asset', component: AssetComponent, loadChildren: () => import('./asset/asset.module').then(x => x.AssetModule), canActivate: [AuthGuard], data: { role: '3' } },
+
+  { path: 'assetmaster', component: AssetmasterComponent, loadChildren: () => import('./assetmaster/assetmaster.module').then(x => x.AssetmasterModule), canActivate: [AuthGuard], data: { role: '1' } },
 
    //wildcard route for page not found - should be last route
   { path: '**', component: NotFoundComponent }

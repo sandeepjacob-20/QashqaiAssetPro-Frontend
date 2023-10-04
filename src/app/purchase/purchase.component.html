@@ -1,1 +1,22 @@
+<ul class="nav nav-pills nav-background">
+  <li class="nav-item">
+    <a class="nav-link active" href="purchase">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/purchase/add">New Order</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/purchase/list">List Orders</a>
+  </li>
+  <div class="navbar-spacer"></div>
+  <li class="nav-link custom-logo">
+    <img src="../../assets/404.jpeg" alt="" width="50px"/>
+  </li>
+  <div class="navbar-spacer-logout"></div>
+  <li class="nav-item">
+    <button class="btn btn-danger nav-item" (click)="LogOut()">LogOut</button>
+  </li>
+     
+</ul>
+
 <router-outlet></router-outlet>

@@ -60,13 +60,25 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/home/admin']);
+            this.router.navigate(['/assetmaster']);
           }
           else if (response.data.role == 2) {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/home/user']);
+            this.router.navigate(['/purchase']);
+          }
+          else if (response.data.role == 3) {
+            localStorage.setItem('USER_NAME', response.data.UserName);
+            localStorage.setItem('ACCESS_ROLE', response.data.role);
+            localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
+            this.router.navigate(['/asset']);
+          }
+          else if (response.data.role == 4) {
+            localStorage.setItem('USER_NAME', response.data.UserName);
+            localStorage.setItem('ACCESS_ROLE', response.data.role);
+            localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
+            this.router.navigate(['/vendors']);
           }
         });
     }
