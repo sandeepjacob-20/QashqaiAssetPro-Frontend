@@ -19,7 +19,6 @@ export class AddComponent implements OnInit {
     this.purchaseService.getAllAssets();
 
   }
-<<<<<<< HEAD
 
   addOrder (form?: NgForm){
   console.log("Inserting............");
@@ -30,17 +29,6 @@ export class AddComponent implements OnInit {
     (error) =>{
       console.log(error)
     }
-=======
-  addOrder(form?: NgForm) {
-    console.log("Inserting............");
-    this.purchaseService.insertOrder(form.value).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error)
-      }
->>>>>>> b0874863795a46cdfef46b96a8040c1d66013cd9
 
     )
 
