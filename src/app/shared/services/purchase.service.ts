@@ -106,4 +106,9 @@ export class PurchaseService {
       console.log(error)
     });
   }
+  //disable
+
+  disableOrder(id:number){
+    return this.httpClient.get(environment.apiURL+'/api/orders/delete/'+id)
+  }
 }
