@@ -10,6 +10,8 @@ import { NewordersComponent } from './neworders/neworders.component';
 import { EditordersComponent } from './editorders/editorders.component';
 import { FormsModule } from '@angular/forms';
 import { AssetmasterEditComponent } from './assetmaster-edit/assetmaster-edit.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { AssetmasterEditComponent } from './assetmaster-edit/assetmaster-edit.co
   imports: [
     CommonModule,
     AssetmasterRoutingModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
     FormsModule
   ]
 })

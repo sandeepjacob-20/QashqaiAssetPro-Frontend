@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Assetmaster } from 'src/app/shared/model/assetmaster';
 import { Purchase } from 'src/app/shared/model/purchase';
 import { AssetmasterService } from 'src/app/shared/services/assetmaster.service';
 import { PurchaseService } from 'src/app/shared/services/purchase.service';
@@ -11,6 +10,10 @@ import { PurchaseService } from 'src/app/shared/services/purchase.service';
   styleUrls: ['./pending-list.component.scss']
 })
 export class PendingListComponent implements OnInit {
+  // variables for pagination and search
+  SearchTerm: string;
+  p: number;
+  pageSize: number = 5;
 
   constructor(public purchaseService: PurchaseService, 
     public assetmasterService: AssetmasterService,

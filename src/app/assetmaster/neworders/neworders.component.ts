@@ -10,10 +10,15 @@ import { PurchaseService } from 'src/app/shared/services/purchase.service';
 })
 export class NewordersComponent implements OnInit {
 
+  // declaring variables
+  SearchTerm: string;
+  p: number;
+  pageSize: number = 5;
+
   constructor(public purchaseService: PurchaseService, private router: Router) { }
 
   ngOnInit(): void {
-     this.purchaseService.getAllOrders();
+    this.purchaseService.getAllOrders();
   }
 
   //getting order data

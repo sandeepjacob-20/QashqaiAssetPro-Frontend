@@ -8,7 +8,10 @@ import { AssetmasterService } from 'src/app/shared/services/assetmaster.service'
   styleUrls: ['./assetmaster-list.component.scss']
 })
 export class AssetmasterListComponent implements OnInit {
-
+  // variable declaration
+  SearchTerm: string;
+  p: number;
+  pageSize: number=5;
   constructor(public assetMasterService: AssetmasterService,
     private router: Router) { }
 
