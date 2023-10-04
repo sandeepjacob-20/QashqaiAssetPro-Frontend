@@ -15,7 +15,8 @@
                 <th>Vendor Name</th>
                 <th>Status</th>
                 <th>Action</th>
-                <th>Active</th>
+                
+              
                 
 
             </tr>
@@ -31,11 +32,9 @@
                 <td>{{purchase.assetDefinition.adName}}</td>
                 <td>{{purchase.vendor.vendorName}}</td>
                 <td>{{purchase.purchaseStatus.status}}</td>
-                <td><button type="button" class="btn btn-sm btn-outline-info"(click)="updateOrders(purchase)"><i class="fa fa-edit"></i></button>
+                <td style="width: 100px;"><button type="button" class="btn btn-sm btn-outline-info"(click)="updateOrders(purchase)"><i class="fa fa-edit"></i></button>
                     &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableOrder(purchase.pdId)"><i class="fa fa-trash"></i></button>
-                    <!-- &nbsp;<button type="button" class="btn  btn-sm btn-danger"(click)="disableEmployee(employee.id)"><i class="fa-solid fa-ban"></i></button></td> -->
-                    <td><input type="checkbox" [checked]="purchase.active" disabled /></td>
-               
+                </td>
 
             </tr>
 
