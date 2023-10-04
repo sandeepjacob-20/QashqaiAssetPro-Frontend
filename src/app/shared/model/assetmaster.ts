@@ -13,7 +13,7 @@ export class Assetmaster {
     vendor: Vendor = new Vendor();
 
     adId: number = 0;
-    assetdfinition: AssetDefinition = new AssetDefinition();
+    assetdefinition: AssetDefinition = new AssetDefinition();
 
     model: string = '';
     serialNumber: number = 0;

@@ -27,4 +27,19 @@ updateOrders(purchase:Purchase){
   this.router.navigate(['/purchase/useredit',purchase.pdId])
 }
 
+  //disable order
+  disableOrder(_id:number){
+    if(confirm('Are you sure you want to DELETE this record?')){
+      this.purchaseService.disableOrder(_id)
+       .subscribe(
+         (response)=>{
+           console.log(response)
+           this.purchaseService.getAllOrders();
+         },
+         (error)=>{
+           console.log(error)    
+         }
+       )
+    }
+  }
 }
