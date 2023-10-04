@@ -36,34 +36,41 @@
         -->
         </div>
 
-        <!-- date valid from -->
-        <div class="form-group">
-            <label>Date Valid From</label>
-            <input name="dteValidFrom" #dteValidFrom="ngModel" type="date"
-                [(ngModel)]="vendorService.formVendorData.dteValidFrom" class="form-control"
-                placeholder="Enter Date Valid From" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':dteValidFrom.touched&&dteValidFrom.invalid}" />
-            <div class="validation-error" *ngIf="dteValidFrom.touched&&dteValidFrom.invalid">
-                <div *ngIf="dteValidFrom.errors.required">
-                    Date is invalid or required!
-                </div>
-            </div>
-        </div>
-        <!-- date valid to -->
-
-        <div class="form-group">
-            <label>Date Valid To</label>
-            <input name="dteValidTo" #dteValidTo="ngModel" type="date"
-                [(ngModel)]="vendorService.formVendorData.dteValidTo" class="form-control"
-                placeholder="Enter Date Valid To" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':dteValidTo.touched&&dteValidTo.invalid}" />
-            <div class="validation-error" *ngIf="dteValidTo.touched&&dteValidTo.invalid">
-                <div *ngIf="dteValidTo.errors.required">
-                    Date is invalid or required!
-                </div>
-            </div>
-        </div>
-
+      <!-- date valid from -->
+<div class="form-group">
+    <label>Date Valid From</label>
+    <input name="dteValidFrom" #dteValidFrom="ngModel" type="date"
+      [(ngModel)]="vendorService.formVendorData.dteValidFrom" class="form-control"
+      placeholder="Enter Date Valid From" minlength="3" maxlength="25" required
+      [ngClass]="{'is-invalid': dteValidFrom.touched && dteValidFrom.invalid}" />
+    
+    <!-- validation error message -->
+    <div class="validation-error" *ngIf="dteValidFrom.touched && dteValidFrom.invalid">
+      <div *ngIf="dteValidFrom.errors.required">
+        Date is invalid or required!
+      </div>
+    </div>
+  </div>
+  
+      <!-- date valid to -->
+<div class="form-group">
+    <label>Date Valid To</label>
+    <input name="dteValidTo" #dteValidTo="ngModel" type="date"
+      [(ngModel)]="vendorService.formVendorData.dteValidTo" class="form-control"
+      placeholder="Enter Date Valid To" minlength="3" maxlength="25" required
+      [ngClass]="{'is-invalid': dteValidTo.touched && dteValidTo.invalid}"
+      [min]="vendorService.formVendorData.dteValidFrom" />
+  
+    <!-- validation error message for date comparison -->
+    <div class="validation-error" *ngIf="dteValidTo.touched && dteValidTo.invalid">
+      <div *ngIf="dteValidTo.errors.required">
+        Date is invalid or required!
+      </div>
+      <div *ngIf="dteValidTo.errors.min">
+        "Date Valid To" must be greater than or equal to "Date Valid From."
+      </div>
+    </div>
+  </div>
         <!-- address -->
     
         <div class="form-group">
