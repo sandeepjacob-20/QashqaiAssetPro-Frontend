@@ -26,9 +26,9 @@
         <!-- vendor type -->
         <div class="form-group">
             <label>Vendor Type</label>
-            <select name="vendorType" id="vendorType" #assetId="ngModel"
-                [(ngModel)]="vendorService.formVendorData.vendorType" class="form-control" required>
-                <option value="0" selected disabled>---Select vendor type</option>
+            <select name="vendorType" id="vendorType" #vendorType="ngModel" [(ngModel)]="vendorService.formVendorData.vendorType"  class="form-control" required>
+                <option value="0" selected disabled>---Select Vendor Type</option>
+                
                 <option value="supplier">Supplier</option>
             </select>
             <!-- <input name="vendorType" #designation="ngModel"  [(ngModel)]="vendorService.formVendorData.vendorType"
