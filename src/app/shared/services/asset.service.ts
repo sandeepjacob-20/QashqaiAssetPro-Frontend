@@ -55,7 +55,7 @@ export class AssetService {
     
   }
   //adding assetdefintion
-   insertAsset(asset:Asset):Observable<any>{
+   insertAsset(asset:AssetDefinition):Observable<any>{
     return this.httpClient.post(environment.apiURL+'/api/assetdefinition',asset)
    }
   //disable
@@ -63,7 +63,7 @@ export class AssetService {
     return this.httpClient.get(environment.apiURL+'/api/assetdefinition/deactivate/'+id)
   }
   // //update
-   updateAsset(asset:Asset):Observable<any>{
+   updateAsset(asset:AssetDefinition):Observable<any>{
    return this.httpClient.put(environment.apiURL+'/api/assetdefinition',asset)
    }
 
