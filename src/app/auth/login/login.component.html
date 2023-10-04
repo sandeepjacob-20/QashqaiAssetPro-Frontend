@@ -1,17 +1,21 @@
-<div class="container">
+<div class="container custom-container">
     <div>
-        <h2>Login</h2>
-        <hr>
+    <img src="../../assets/logo.png" alt="Logo" width="200px">
+    <h1>Qashqai Asset Pro</h1>
+    <hr>
+    <br>
+</div>
+    <div>
         <form [formGroup]="loginform" (ngSubmit)="loginCredentials()">
             <!-- username -->
             <div class="form-group">
                 <input type="text" placeholder="Enter username"
                 formControlName="userName"
-                class="form-control"/>
+                class="form-control rounded-pill"/>
             </div>
             <!-- validation message -->
             <div *ngIf="isSubmitted && formControls.userName.errors">
-                <div class="errors" *ngIf="formControls.userName.errors.required">
+                <div class="validation-error error" *ngIf="formControls.userName.errors.required">
                     Username is invalid or required
                 </div>
             </div>
@@ -20,11 +24,11 @@
             <div class="form-group">
                 <input type="password" placeholder="Enter password"
                 formControlName="password"
-                class="form-control"/>
+                class="form-control rounded-pill"/>
             </div>
             <!-- validation message -->
             <div *ngIf="isSubmitted && formControls.password.errors">
-                <div class="errors" *ngIf="formControls.password.errors.required">
+                <div class="validation-error error" *ngIf="formControls.password.errors.required">
                     Password is invalid or required
                 </div>
             </div>
@@ -32,10 +36,10 @@
             <!-- Submit Button -->
             <br>
             <div>
-                <button type="submit" class="btn btn-primary form-control"
+                <button type="submit" class="btn btn-primary form-control pill-button"
                 >Submit</button>
             </div>
-            <div class="validation-error" *ngIf="error">
+            <div class="validation-error error" *ngIf="error">
                 {{error}}
             </div>
         </form>

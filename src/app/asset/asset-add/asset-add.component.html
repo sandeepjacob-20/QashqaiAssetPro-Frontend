@@ -1,99 +1,115 @@
-  <div class="'container">
-    <!-- Adding Asset Information -->
-    <h3>New Asset Info</h3>
-    <hr>
-    <!-- Template Driven Form -->
-    <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) "> 
-        <!-- Asset Defintion Id -->
-        <div class="form-group">
-            <input type="hidden" readonly name="adId" value="adId" [(ngModel)]="assetService.formAssetData.adId" />
-        </div>
-
-
-        <!-- Asset Name -->
+<div class="container custom-container">
+  <!-- Adding Asset Information -->
+  <h3 class="heading">New Asset Info</h3>
+  <hr />
+  <!-- Template Driven Form -->
+  <form
+    name="frmData"
+    #form="ngForm"
+    autocomplete="off"
+    (ngSubmit)="onSubmit(form)"
+  >
+    <!-- Asset Defintion Id -->
     <div class="form-group">
-        <label>Asset Name</label>
-        <input
-          name="adName"
-          #adName="ngModel"
-          [(ngModel)]="assetService.formAssetData.adName"
-          class="form-control"
-          placeholder="Enter the Asset Name"
-          minlength="3"
-          maxlength="25"
-          required
-          [ngClass]="{
-            'is-invalid': adName.touched && adName.invalid
-          }"
-        />
-  
-        <!-- validation Error Message -->
-        <div
-          class="validation-error"
-          *ngIf="adName.touched && adName.invalid"
-        >
-          <div *ngIf="adName.errors.required">
-            Asset Name  is invalid or required!
-          </div>
+      <input
+        type="hidden"
+        readonly
+        name="adId"
+        value="adId"
+        [(ngModel)]="assetService.formAssetData.adId"
+      />
+    </div>
+
+    <!-- Asset Name -->
+    <div class="form-group">
+      <label>Asset Name</label>
+      <input
+        name="adName"
+        #adName="ngModel"
+        [(ngModel)]="assetService.formAssetData.adName"
+        class="form-control"
+        placeholder="Enter the Asset Name"
+        minlength="3"
+        maxlength="25"
+        required
+        [ngClass]="{
+          'is-invalid': adName.touched && adName.invalid
+        }"
+      />
+
+      <!-- validation Error Message -->
+      <div class="validation-error" *ngIf="adName.touched && adName.invalid">
+        <div *ngIf="adName.errors.required">
+          Asset Name is invalid or required!
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-       
-        <!-- AssetType Name -->
-         <div class="form-group">
-            <label>AssetType Name</label>
-            <select name="assetId" id="assetId" #assetId="ngModel"
-                [(ngModel)]="assetService.formAssetData.assetId" class="form-control">
-                <option value=0 selected disabled>---Select Asset Type-----------</option>
-                <option *ngFor="let ast of assetService.asset" value="{{ast.assetId}}">
-                    {{ast.assetType}}
-                </option>
-            </select>
-        </div>
-
-        <!-- AssetType Name -->
-        <div class="form-group">
-            <label>AssetClass Name</label>
-            <select name="assetClassId" id="assetClassId" #assetClassId="ngModel"
-                [(ngModel)]="assetService.formAssetData.assetClassId" class="form-control">
-                <option value=0 selected disabled>---Select Asset class-----------</option>
-                <option *ngFor="let ast of assetService.assetclass" value="{{ast.assetClassId}}">
-                    {{ast.assetClass}}
-                </option>
-            </select>
-        </div>
-
-
-        <!-- isActive -->
+    </div>
+    <!-- AssetType Name -->
     <div class="form-group">
-        <div class="form-check">
-            <input type="checkbox" name="active" #active="ngModel"  [(ngModel)]="assetService.formAssetData.active" class="form-check-input custom-checkbox"
-            />
-            <label class="form-check-label">Is in Service</label>
-            
-        </div>
-        
-        
-        </div>
-        <br>
+      <label>AssetType Name</label>
+      <select
+        name="assetId"
+        id="assetId"
+        #assetId="ngModel"
+        [(ngModel)]="assetService.formAssetData.assetId"
+        class="form-control"
+      >
+        <option value="0" selected disabled>
+          ---Select Asset Type-----------
+        </option>
+        <option
+          *ngFor="let ast of assetService.asset"
+          value="{{ ast.assetId }}"
+        >
+          {{ ast.assetType }}
+        </option>
+      </select>
+    </div>
 
+    <!-- AssetType Name -->
+    <div class="form-group">
+      <label>AssetClass Name</label>
+      <select
+        name="assetClassId"
+        id="assetClassId"
+        #assetClassId="ngModel"
+        [(ngModel)]="assetService.formAssetData.assetClassId"
+        class="form-control"
+      >
+        <option value="0" selected disabled>
+          ---Select Asset class-----------
+        </option>
+        <option
+          *ngFor="let ast of assetService.assetclass"
+          value="{{ ast.assetClassId }}"
+        >
+          {{ ast.assetClass }}
+        </option>
+      </select>
+    </div>
 
-        <!-- Submit -->
-        <div class="'form-group">
-            <button type="submit" class="btn btn-lg btn-primary form-control"
-                [disabled]="!(form.valid && form.dirty)">INSERT</button>
-        </div>
-
-
-
-</form>
-</div> 
+    <!-- isActive -->
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          type="checkbox"
+          name="active"
+          #active="ngModel"
+          [(ngModel)]="assetService.formAssetData.active"
+          class="form-check-input custom-checkbox"
+        />
+        <label class="form-check-label">Is In Service</label>
+      </div>
+    </div>
+    <!-- Submit -->
+    <div class="form-group custom-button">
+      <button
+        type="submit"
+        class="btn btn-lg btn-primary form-control"
+        [disabled]="!(form.valid && form.dirty)"
+      >
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</div>

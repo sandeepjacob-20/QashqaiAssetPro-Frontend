@@ -1,16 +1,18 @@
-.container{
+.custom-container {
     text-align: center;
     margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #dfdfdf;
+    padding: 3%;
+    border-radius: 30px;
+    width: 35vw;    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-//to diplay missing field errors in red
-.errors{
-    color: red;
-    text-align: left;
+.pill-button{
+    border-radius: 50px;
+    width:fit-content
 }
-
-//to display validation errors in red
-.validation-error{
-    color: red;
+.error{
     text-align: left;
 }

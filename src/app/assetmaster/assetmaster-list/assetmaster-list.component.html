@@ -31,11 +31,11 @@
                 <td>{{asset.model}}</td>
                 <td>{{asset.vendors.vendorName}}</td>
                 <td>{{asset.serialNumber}}</td>
-                <td>{{asset.yearOfManifacture}}</td>
-                <td>{{asset.purchaseDate}}</td>
+                <td>{{asset.yearOfManifacture | date: "dd-MMM-yyyy" }}</td>
+                <td>{{asset.purchaseDate | date: "dd-MMM-yyyy"}}</td>
                 <td>{{asset.warranty}}</td>
-                <td>{{asset.warrantyFrom}}</td>
-                <td>{{asset.warrantyTo}}</td>
+                <td>{{asset.warrantyFrom | date: "dd-MMM-yyyy"}}</td>
+                <td>{{asset.warrantyTo | date: "dd-MMM-yyyy"}}</td>
                 <td style="width: 100px;"><button type="button" class="btn btn-sm btn-outline-info"(click)="editAsset(asset)"><i class="fa fa-edit"></i></button>&nbsp;
                 <button type="button" class="btn  btn-sm btn-danger"(click)="disableAsset(asset.amId)"><i class="fa fa-trash"></i></button></td>
             </tr>

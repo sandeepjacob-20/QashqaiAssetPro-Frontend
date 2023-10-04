@@ -1,129 +1,198 @@
-<div clsss="container">
-    <h3>New Vendor</h3>
-    <hr>
-    <!--template driven form-->
-    <form name="frmVendor" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+<div class="container custom-container">
+  <h3 class="heading">New Vendor</h3>
+  <hr />
+  <!--template driven form-->
+  <form
+    name="frmVendor"
+    #form="ngForm"
+    autocomplete="off"
+    (ngSubmit)="onSubmit(form)"
+  >
+    <!--vendor Id-->
+    <div class="form-group">
+      <input
+        type="hidden"
+        readonly
+        name="vendorId"
+        [(ngModel)]="vendorService.formVendorData.vendorId"
+      />
+    </div>
+    <!-- Vendor Name -->
+    <div class="form-group">
+      <label>Vendor Name</label>
+      <input
+        name="vendorName"
+        #vendorName="ngModel"
+        [(ngModel)]="vendorService.formVendorData.vendorName"
+        class="form-control"
+        placeholder="Enter Vendor Name"
+        minlength="1"
+        maxlength="25"
+        required
+        [ngClass]="{ 'is-invalid': vendorName.touched && vendorName.invalid }"
+      />
 
-        <!--vendor Id-->
-        <div class="form-group">
-            <input type="hidden" readonly name="vendorId" [(ngModel)]="vendorService.formVendorData.vendorId" />
+      <!-- validation error message -->
+      <div
+        class="validation-error"
+        *ngIf="vendorName.touched && vendorName.invalid"
+      >
+        <div *ngIf="vendorName.errors.required">
+          Vendor Name is invalid or required!
         </div>
-        <!-- Vendor Name -->
-        <div class="form-group">
-            <label>Vendor Name</label>
-            <input name="vendorName" #vendorName="ngModel" [(ngModel)]="vendorService.formVendorData.vendorName"
-                class="form-control" placeholder="Enter Vendor Name" minlength="1" maxlength="25" required
-                [ngClass]="{'is-invalid':vendorName.touched&&vendorName.invalid}" />
+      </div>
+    </div>
 
-            <!-- validation error message -->
-            <div class="validation-error" *ngIf="vendorName.touched&&vendorName.invalid">
-                <div *ngIf="vendorName.errors.required">
-                    Vendor Name is invalid or required!
-                </div>
-            </div>
-        </div>
-
-        <!-- vendor type -->
-        <div class="form-group">
-            <label>Vendor Type</label>
-            <select name="vendorType" id="vendorType" #vendorType="ngModel" [(ngModel)]="vendorService.formVendorData.vendorType"  class="form-control" required>
-                <option value="0" selected disabled>---Select Vendor Type</option>
-                
-                <option value="supplier">Supplier</option>
-            </select>
-            <!-- <input name="vendorType" #designation="ngModel"  [(ngModel)]="vendorService.formVendorData.vendorType"
+    <!-- vendor type -->
+    <div class="form-group">
+      <label>Vendor Type</label>
+      <select
+        name="vendorType"
+        id="vendorType"
+        #vendorType="ngModel"
+        [(ngModel)]="vendorService.formVendorData.vendorType"
+        class="form-control"
+        required
+      >
+        <option value="0" selected disabled>---Select Vendor Type---</option>
+        <option value="supplier">Supplier</option>
+      </select>
+      <!-- <input name="vendorType" #designation="ngModel"  [(ngModel)]="vendorService.formVendorData.vendorType"
         [ngClass]="{'is-invalid':designation.touched && designation.invalid}" readonly/>
         -->
-        </div>
+    </div>
 
-      <!-- date valid from -->
-<div class="form-group">
-    <label>Date Valid From</label>
-    <input name="dteValidFrom" #dteValidFrom="ngModel" type="date"
-      [(ngModel)]="vendorService.formVendorData.dteValidFrom" class="form-control"
-      placeholder="Enter Date Valid From" minlength="3" maxlength="25" required
-      [ngClass]="{'is-invalid': dteValidFrom.touched && dteValidFrom.invalid}" />
-    
-    <!-- validation error message -->
-    <div class="validation-error" *ngIf="dteValidFrom.touched && dteValidFrom.invalid">
-      <div *ngIf="dteValidFrom.errors.required">
-        Date is invalid or required!
+    <!-- date valid from -->
+    <div class="form-group">
+      <label>Date Valid From</label>
+      <input
+        name="dteValidFrom"
+        #dteValidFrom="ngModel"
+        type="date"
+        [(ngModel)]="vendorService.formVendorData.dteValidFrom"
+        class="form-control"
+        placeholder="Enter Date Valid From"
+        minlength="3"
+        maxlength="25"
+        required
+        [ngClass]="{
+          'is-invalid': dteValidFrom.touched && dteValidFrom.invalid
+        }"
+      />
+
+      <!-- validation error message -->
+      <div
+        class="validation-error"
+        *ngIf="dteValidFrom.touched && dteValidFrom.invalid"
+      >
+        <div *ngIf="dteValidFrom.errors.required">
+          Date is invalid or required!
+        </div>
       </div>
     </div>
-  </div>
-  
-      <!-- date valid to -->
-<div class="form-group">
-    <label>Date Valid To</label>
-    <input name="dteValidTo" #dteValidTo="ngModel" type="date"
-      [(ngModel)]="vendorService.formVendorData.dteValidTo" class="form-control"
-      placeholder="Enter Date Valid To" minlength="3" maxlength="25" required
-      [ngClass]="{'is-invalid': dteValidTo.touched && dteValidTo.invalid}"
-      [min]="vendorService.formVendorData.dteValidFrom" />
-  
-    <!-- validation error message for date comparison -->
-    <div class="validation-error" *ngIf="dteValidTo.touched && dteValidTo.invalid">
-      <div *ngIf="dteValidTo.errors.required">
-        Date is invalid or required!
-      </div>
-      <div *ngIf="dteValidTo.errors.min">
-        "Date Valid To" must be greater than or equal to "Date Valid From."
+
+    <!-- date valid to -->
+    <div class="form-group">
+      <label>Date Valid To</label>
+      <input
+        name="dteValidTo"
+        #dteValidTo="ngModel"
+        type="date"
+        [(ngModel)]="vendorService.formVendorData.dteValidTo"
+        class="form-control"
+        placeholder="Enter Date Valid To"
+        minlength="3"
+        maxlength="25"
+        required
+        [ngClass]="{ 'is-invalid': dteValidTo.touched && dteValidTo.invalid }"
+        [min]="vendorService.formVendorData.dteValidFrom"
+      />
+
+      <!-- validation error message for date comparison -->
+      <div
+        class="validation-error"
+        *ngIf="dteValidTo.touched && dteValidTo.invalid"
+      >
+        <div *ngIf="dteValidTo.errors.required">
+          Date is invalid or required!
+        </div>
+        <div *ngIf="dteValidTo.errors.min">
+          "Date Valid To" must be greater than or equal to "Date Valid From."
+        </div>
       </div>
     </div>
-  </div>
-        <!-- address -->
-    
-        <div class="form-group">
-            <label>Address</label>
-            <input name="address" #address="ngModel" [(ngModel)]="vendorService.formVendorData.address"
-                class="form-control" placeholder="Enter Address" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':address.touched&&address.invalid}" />
+    <!-- address -->
 
-            <!-- validation error message -->
-            <div class="validation-error" *ngIf="address.touched&&address.invalid">
-                <div *ngIf="address.errors.required">
-                    Address is invalid or required!
-                </div>
-            </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input
+        name="address"
+        #address="ngModel"
+        [(ngModel)]="vendorService.formVendorData.address"
+        class="form-control"
+        placeholder="Enter Address"
+        minlength="3"
+        maxlength="25"
+        required
+        [ngClass]="{ 'is-invalid': address.touched && address.invalid }"
+      />
+
+      <!-- validation error message -->
+      <div class="validation-error" *ngIf="address.touched && address.invalid">
+        <div *ngIf="address.errors.required">
+          Address is invalid or required!
         </div>
+      </div>
+    </div>
 
-
-
-
-
-        
-        <!-- dropdown list for department -->
-        <div class="form-group">
-            <label>Asset Type </label>
-            <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="vendorService.formVendorData.assetId"
-                class="form-control" required>
-                <option value="0" selected disabled>---Select Asset Type</option>
-                <option *ngFor="let assettype of vendorService.assettypes" value="{{assettype.assetId}}">
-                    {{assettype.assetType}}</option>
-            </select>
-            <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
-                <div *ngIf="assetId.errors.required">
-                    Asset type is invalid or required!
-                </div>
-            </div>
+    <!-- dropdown list for department -->
+    <div class="form-group">
+      <label>Asset Type </label>
+      <select
+        name="assetId"
+        id="assetId"
+        #assetId="ngModel"
+        [(ngModel)]="vendorService.formVendorData.assetId"
+        class="form-control"
+        required
+      >
+        <option value="0" selected disabled>---Select Asset Type---</option>
+        <option
+          *ngFor="let assettype of vendorService.assettypes"
+          value="{{ assettype.assetId }}"
+        >
+          {{ assettype.assetType }}
+        </option>
+      </select>
+      <div class="validation-error" *ngIf="assetId.touched && assetId.invalid">
+        <div *ngIf="assetId.errors.required">
+          Asset type is invalid or required!
         </div>
-        <!-- isActive -->
-        <div class="form-group">
-            <div class="form-check">
-                <input type="checkbox" name="active" #active="ngModel" [(ngModel)]="vendorService.formVendorData.active"
-                    class="form-check-input custom-checkbox" />
-                <label class="form-check-label">Is in Service</label>
-
-            </div>
-
-
-        </div>
-        <br>
-        <!-- Submit -->
-        <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary form-control"
-                [disabled]="!(form.valid &&form.dirty)">INSERT</button>
-        </div>
-    </form>
-
+      </div>
+    </div>
+    <!-- isActive -->
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          type="checkbox"
+          name="active"
+          #active="ngModel"
+          [(ngModel)]="vendorService.formVendorData.active"
+          class="form-check-input custom-checkbox"
+        />
+        <label class="form-check-label">Is in Service</label>
+      </div>
+    </div>
+    <br />
+    <!-- Submit -->
+    <div class="form-group custom-button">
+      <button
+        type="submit"
+        class="btn btn-lg btn-primary form-control"
+        [disabled]="!(form.valid && form.dirty)"
+      >
+        Insert
+      </button>
+    </div>
+  </form>
 </div>

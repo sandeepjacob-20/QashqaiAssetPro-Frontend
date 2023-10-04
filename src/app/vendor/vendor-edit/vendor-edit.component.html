@@ -1,5 +1,5 @@
-<div clsss="container">
-    <h3>Edit Vendor</h3>
+<div class="custom-container container">
+    <h3 class="heading">Edit Vendor</h3>
     <hr>
     <!--template driven form-->
     <form name="frmVendor" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
@@ -136,7 +136,7 @@
         </div>
         <br>
     <!-- Submit -->
-    <div class="form-group">
+    <div class="form-group  custom-button">
         <button type="submit" class="btn btn-lg btn-primary form-control"
         [disabled]="!(form.valid &&form.dirty)">UPDATE</button>
     </div>

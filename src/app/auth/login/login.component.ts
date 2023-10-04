@@ -60,25 +60,25 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/assetmaster']);
+            this.router.navigate(['/assetmaster/home']);
           }
           else if (response.data.role == 2) {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/purchase']);
+            this.router.navigate(['/purchase/home']);
           }
           else if (response.data.role == 3) {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/asset']);
+            this.router.navigate(['/asset/home']);
           }
           else if (response.data.role == 4) {
             localStorage.setItem('USER_NAME', response.data.UserName);
             localStorage.setItem('ACCESS_ROLE', response.data.role);
             localStorage.setItem('JWT_TOKEN', response.data['ACCESS TOKEN']);
-            this.router.navigate(['/vendors']);
+            this.router.navigate(['/vendors/home']);
           }
         });
     }
