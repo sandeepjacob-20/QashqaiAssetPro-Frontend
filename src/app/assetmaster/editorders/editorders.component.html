@@ -9,11 +9,11 @@
         </div>
         <div class="form-group">
             <label for="Order Id">Order Number</label>
-            <input type="text" name="pdOrder" [(ngModel)]="purchaseService.formOrderData.pdOrder" />
+            <input type="text" readonly name="pdOrder" [(ngModel)]="purchaseService.formOrderData.pdOrder" />
         </div>
         <div class="form-group">
             <label for="Order Id">Quantity</label>
-            <input type="number" name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
+            <input type="number" readonly name="pdQty" [(ngModel)]="purchaseService.formOrderData.pdQty" />
         </div>
         <!-- Date of Order -->
         <div class="form-group">
@@ -98,7 +98,6 @@
         </div>
         <!-- Submit button -->
         <div class="form-group">
-            
             <button type="submit" class="btn btn-lg btn-primary form-control"
                 [disabled]="!(form.valid && form.dirty)">INSERT</button>
         </div>

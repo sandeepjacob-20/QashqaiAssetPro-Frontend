@@ -65,8 +65,8 @@ export class AssetService {
     return this.httpClient.get(environment.apiURL + '/api/assetdefinition/deactivate/' + id)
   }
   // //update
-  updateAsset(assetdefinition: AssetDefinition): Observable<any> {
-    return this.httpClient.put(environment.apiURL + '/api/assetdefinition', assetdefinition)
-  }
+   updateAsset(asset:Asset):Observable<any>{
+   return this.httpClient.put(environment.apiURL+'/api/assetdefinition',asset)
+   }
 
 }
