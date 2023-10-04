@@ -19,13 +19,14 @@ export class Vendor {
     vendorName:string='';
     vendorType:string='';
     assetId:number=0;
+    assettype:Asset=new Asset();
     dteValidFrom:Date=new Date;
     dteValidTo:Date=new Date;
     address:string='';
     active: boolean=false;
     //object oriented model
 
-    assettype:Asset=new Asset() 
+    
 
    // asset:AssetDefinition=new AssetDefinition() 
 

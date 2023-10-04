@@ -26,7 +26,7 @@ export class Purchase {
 
   active: boolean = false;
   taken: boolean = false;
-  insertOrder: any;
+
 
 
 }

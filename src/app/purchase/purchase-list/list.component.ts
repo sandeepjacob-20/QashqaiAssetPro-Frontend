@@ -9,7 +9,9 @@ import { PurchaseService } from 'src/app/shared/services/purchase.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  searchTerm:string="";
+  page:number=1;
+  pageSize:number=5;
   constructor(public purchaseService:PurchaseService, private router:Router) { }
 
   ngOnInit(): void {

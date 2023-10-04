@@ -110,7 +110,7 @@
             </div>
         </div>
         </div> -->
-<!-- dropdown list for department -->
+<!-- dropdown list for asset type -->
 <div class="form-group">
     <label>Asset Type </label>
     <select name="assetId" id="assetId" #assetId="ngModel" [(ngModel)]="vendorService.formVendorData.assetId"  class="form-control" required>
@@ -119,7 +119,7 @@
     </select>
     <div class="validation-error" *ngIf="assetId.touched&&assetId.invalid">
         <div *ngIf="assetId.errors.required">
-            Department is invalid or required!
+            Asset type is invalid or required!
         </div>
     </div>
     </div>
@@ -138,7 +138,7 @@
     <!-- Submit -->
     <div class="form-group">
         <button type="submit" class="btn btn-lg btn-primary form-control"
-        [disabled]="!(form.valid &&form.dirty)">INSERT</button>
+        [disabled]="!(form.valid &&form.dirty)">UPDATE</button>
     </div>
     </form>
 

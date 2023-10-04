@@ -9,7 +9,9 @@ import {VendorService} from 'src/app/shared/services/vendor.service'
   styleUrls: ['./vendor-list.component.scss']
 })
 export class VendorListComponent implements OnInit {
-
+  searchTerm='';
+  page:number=1;
+pageSize=2;
   constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
