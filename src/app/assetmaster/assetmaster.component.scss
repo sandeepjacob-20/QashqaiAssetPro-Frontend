@@ -4,9 +4,13 @@
 }
 
 .navbar-spacer {
-    flex: 0.35;
+    flex: 1;
 }
 
 .navbar-spacer-logout {
     flex: 0.65;
+}
+
+.logoutItem{
+    float: right;
 }
