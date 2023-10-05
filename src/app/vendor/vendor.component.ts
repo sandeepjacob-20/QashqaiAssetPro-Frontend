@@ -7,6 +7,7 @@ import { AuthService } from '../shared/services/auth.service';
   styleUrls: ['./vendor.component.scss']
 })
 export class VendorComponent implements OnInit {
+  
 
   constructor(private authService: AuthService) { }
 

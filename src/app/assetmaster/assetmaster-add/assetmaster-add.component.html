@@ -1,5 +1,5 @@
-<div class="'container">
-    <h3>New Asset Info</h3>
+<div class="container custom-container">
+    <h3 class="heading">New Asset Info</h3>
     <hr>
     <!-- Template Driven Form -->
     <form name="frmData" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form) ">
@@ -103,7 +103,9 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="btn btn-lg btn-primary form-control"
-                [disabled]="!(form.valid && form.dirty)">INSERT</button>
+        <div class="form-group custom-button">
+            <button type="submit" class="btn btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">Insert</button>
+        </div>
     </form>
 </div>

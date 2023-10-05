@@ -8,10 +8,12 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class PurchaseComponent implements OnInit {
 
+  
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
+  
   LogOut(): void{
     console.log("Logout");
     this.authService.logOut();

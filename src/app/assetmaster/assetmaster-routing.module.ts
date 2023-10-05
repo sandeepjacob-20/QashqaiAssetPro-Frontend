@@ -7,6 +7,7 @@ import { PendingListComponent } from './pending-list/pending-list.component';
 import { NewordersComponent } from './neworders/neworders.component';
 import { EditordersComponent } from './editorders/editorders.component';
 import { AssetmasterEditComponent } from './assetmaster-edit/assetmaster-edit.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path:'add', component: AssetmasterAddComponent, canActivate: [AuthGuard], data: { role: '1' } },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'pending', component: PendingListComponent, canActivate: [AuthGuard], data: { role: '1' } },
   { path: 'neworders', component: NewordersComponent, canActivate: [AuthGuard], data: { role: '1' } },
   { path: 'editorder/:id', component: EditordersComponent, canActivate: [AuthGuard], data: { role: '1' } },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { role: '1' } }
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@ pageSize=2;
   constructor(public vendorService:VendorService,private router:Router) { }
 
   ngOnInit(): void {
-    console.log("HIIIIIIIIIIII im in vendor-list component")
+    // console.log("HIIIIIIIIIIII im in vendor-list component")
     //listing all vendors
     this.vendorService.getAllVendors();
   }

@@ -10,11 +10,12 @@ import { FormsModule } from '@angular/forms';
 
 import { PurchaseUserEditComponent } from './purchase-user-edit/purchase-user-edit.component';
 import{Ng2SearchPipeModule } from 'ng2-search-filter';
-import{NgxPaginationModule } from 'ngx-pagination'
+import{NgxPaginationModule } from 'ngx-pagination';
+import { HomeComponent } from './home/home.component'
 
 
 @NgModule({
-  declarations: [PurchaseComponent, ListComponent, AddComponent, PurchaseUserEditComponent],
+  declarations: [PurchaseComponent, ListComponent, AddComponent, PurchaseUserEditComponent, HomeComponent],
   imports: [
     CommonModule,
     PurchaseRoutingModule,

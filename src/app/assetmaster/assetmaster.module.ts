@@ -11,11 +11,12 @@ import { EditordersComponent } from './editorders/editorders.component';
 import { FormsModule } from '@angular/forms';
 import { AssetmasterEditComponent } from './assetmaster-edit/assetmaster-edit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NgxPaginationModule } from 'ngx-pagination'; 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HomeComponent } from './home/home.component'; 
 
 
 @NgModule({
-  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent, EditordersComponent, AssetmasterEditComponent],
+  declarations: [AssetmasterComponent, AssetmasterAddComponent, AssetmasterListComponent, PendingListComponent, NewordersComponent, EditordersComponent, AssetmasterEditComponent, HomeComponent],
   imports: [
     CommonModule,
     AssetmasterRoutingModule,

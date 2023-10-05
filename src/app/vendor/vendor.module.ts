@@ -9,10 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { VendorEditComponent } from './vendor-edit/vendor-edit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [VendorAddComponent, VendorListComponent, VendorComponent, VendorEditComponent],
+  declarations: [VendorAddComponent, VendorListComponent, VendorComponent, VendorEditComponent, HomeComponent],
   imports: [
     CommonModule,
     VendorRoutingModule,
